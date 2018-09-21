@@ -1,0 +1,25 @@
+.tabItem{
+    margin:20px;
+}
+
+.tabContainer{
+    border:1px solid #dfdfdf;
+    margin-top: 10px;
+    background-color:#fafafa;
+    position:relative;
+}
+
+.backDrop,.loadingScreen{
+    transition: opacity 200ms ease-in;
+}
+
+.loadingScreen.rednao_visible,.backDrop.rednao_visible{
+    visibility:visible;
+    transition-delay:0s;
+}
+
+.loadingScreen.rednao_hidden,.backDrop.rednao_hidden{
+    visibility:hidden;
+    opacity:0;
+    transition:visibility 200ms ease-in;
+}
