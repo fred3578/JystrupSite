@@ -1,32 +1,29 @@
 ( function() {
-    var nav = document.getElementById( 'site-navigation' ), button, menu;
-    if ( ! nav ) {
+    var container, button, menu;
+
+    container = document.getElementById( 'site-navigation' );
+    if ( ! container )
         return;
-    }
- 
-    button = nav.getElementsByTagName( 'button' )[0];
-    menu   = nav.getElementsByTagName( 'ul' )[0];
-    if ( ! button ) {
+
+    button = container.getElementsByTagName( 'button' )[0];
+    if ( 'undefined' === typeof button )
         return;
-    }
- 
-    // Hide button if menu is missing or empty.
-    if ( ! menu || ! menu.childNodes.length ) {
+
+    menu = container.getElementsByTagName( 'ul' )[0];
+
+    // Hide menu toggle button if menu is empty and return early.
+    if ( 'undefined' === typeof menu ) {
         button.style.display = 'none';
         return;
     }
- 
+
+    if ( -1 === menu.className.indexOf( 'wp_nav_menu' ) )
+        menu.className += ' wp_nav_menu';
+
     button.onclick = function() {
-        if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-            menu.className = 'nav-menu';
-        }
- 
-        if ( -1 !== button.className.indexOf( 'toggled-on' ) ) {
-            button.className = button.className.replace( ' toggled-on', '' );
-            menu.className = menu.className.replace( ' toggled-on', '' );
-        } else {
-            button.className += ' toggled-on';
-            menu.className += ' toggled-on';
-        }
+        if ( -1 !== container.className.indexOf( 'toggled' ) )
+            container.className = container.className.replace( ' toggled', '' );
+        else
+            container.className += ' toggled';
     };
-} )(jQuery);
+} )();

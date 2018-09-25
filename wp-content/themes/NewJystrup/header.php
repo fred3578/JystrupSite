@@ -3,7 +3,9 @@
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-  <head>
+
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -17,19 +19,20 @@
 
 <?php wp_head(); ?>
 </head>
-<body>
-
-<?php body_class(); ?>>
-<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+<body <?php body_class(); ?>>
+<!-- bg-primary, bg-success, bg-warning, bg-info, bg-danger, bg-dark, bg-light -->
+<nav id="site-navigation" class="navbar navbar-expand-md navbar-light sticky-top bg-success">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div> class="collapse navbar-collapse" id="navbarCollapse"
+    <div class="collapse navbar-collapse">
         <a class="navbar-brand" href="#">
             <?php bloginfo('name'); ?>
         </a>
+        </div>
+    <div id="navbarCollapse"
     <?php
     wp_nav_menu(array(
         'menu'            => 'primary',
@@ -46,16 +49,3 @@
     ?>
     </div>
 </nav>
-<!-- Mobile menu -->
-<div class="mobile-nav" id="nav-main-mobile">
-    <div class="menu-btn-container">.
-        <div class="menu-btn" id="menu-btn">
-            <div></div>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span id="menu-text">MENU</span>
-        </div>
-    </div>
-</div>.
-</body>
