@@ -11,4 +11,6 @@ footer {
     background-color: red;
 }
 
-
+.navbar-collapse {
+    align-content: stretch;
+}
