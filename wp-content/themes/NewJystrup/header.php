@@ -21,7 +21,7 @@
 </head>
 <body <?php body_class(); ?>>
 <!-- bg-primary, bg-success, bg-warning, bg-info, bg-danger, bg-dark, bg-light -->
-<nav id="site-navigation" class="navbar navbar-expand-md navbar-light sticky-top bg-success">
+<nav id="site-navigation" class="navbar navbar-expand-md navbar-primary sticky-top bg-danger">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>

@@ -4,7 +4,7 @@ Donate link: https://www.webtoffee.com/plugins/
 Tags: eu cookie law, GDPR, cookie law, cookie consent, eu privacy directive, privacy directive, cookies, privacy, compliance
 Requires at least: 3.3.1
 Tested up to: 4.9.8
-Stable tag: 1.6.5
+Stable tag: 1.6.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -54,16 +54,23 @@ Features:
 
 = GDPR Cookie Consent Premium Version Features =
 <ul>
-	<li>Manage list of cookies ( Name, CookieID, Description, Duration, Type, Category, Header Script, Footer Script)</li>
-	<li>Manage Cookie Categories</li>
-	<li>Allow to display Cookie Settings popup where site visitors can opt-in or give consent to Cookie Categories</li>
-	<li>Fully customisable to look just like your own website’s style: customise the colours, styles and fonts</li>
-	<li>Put the cookie bar in either the header or the footer</li>
-	<li>(Optional) accept cookie policy if the user scrolls</li>
-	<li>(Optional) automatically close the cookie bar after a delay (delay is configurable)</li>
-	<li>(Optional) cookie bar can be permanently dismissed or accessible through a “show again” tab</li>
-	<li>(Optional) “show again” tab is fully customisable including position shown on page and styles</li>
-	<li>“Cookie Audit” shortcode to construct a nicely-styled ‘Privacy & Cookie Policy’</li>
+<li>Manage list of cookies ( Name, CookieID, Description, Duration, Type, Category, Header Script, Footer Script).</li>
+	<li>Manage Cookie Categories.</li>
+	<li>Scan and auto block scripts - Google Analytics, FB Pixel, Google tag manager.</li>
+	<li>Location based exclusion of cookie notice for EU countries.</li>
+	<li>Provide the users with the granular control over the cookies/scipts used by the website.</li>
+	<li>Optionally log users' consent and export into a CSV file.</li>
+	<li>Customize the privacy overview in the cookie settings popup.</li>
+	<li>Export/import cookies and related information via CSV file.</li>
+	<li>Scan and import/export the cookies in the homepage.</li>
+	<li>Allow to display cookie cettings popup where site visitors can opt-in or give consent to cookie categories.</li>
+	<li>Customisable to look just like your own website’s style: customise the colours, styles and fonts.</li>
+	<li>Put the cookie bar in either the header or the footer.</li>
+	<li>(Optional) accept cookie policy if the user scrolls.</li>
+	<li>(Optional) automatically close the cookie bar after a delay (delay is configurable).</li>
+	<li>(Optional) cookie bar can be permanently dismissed or accessible through a “show again” tab.</li>
+	<li>(Optional) “show again” tab is fully customisable including position shown on page and styles.</li>
+	<li>“Cookie Audit” shortcode to construct a nicely-styled ‘Privacy & Cookie Policy’.</li>
 	<li>WPML compatible</li>
 	<li>qTranslate support</li>
 </ul>
@@ -165,6 +172,17 @@ See http://cookielawinfo.com for more information on what is required.
 4. Header (with custom styles)
 
 == Changelog ==
+
+= 1.6.7 =
+
+* In the previous update a title with default text ‘This website uses cookies‘ would get added to the existing cookie bar. In this update this title will get removed to that it is blank by default. In case you need this to be added again you need to explicitly add suitable content for the title.
+* Addressed the conflict with [cookie_reject] shortcode for previous users who had the reject button option enabled.
+* Optimized the plugin js and css assets to render only in plugin pages.
+
+= 1.6.6 =
+
+* Improved UI.
+* Enhancements to cookie message bar - included title and option for overlay layout.
 
 = 1.6.5 =
 
@@ -304,3 +322,11 @@ See http://cookielawinfo.com for more information on what is required.
 
 * Filter added. (filter to edit audit table head)
 
+= 1.6.6 =
+* Improved UI.
+* Enhancements to cookie message bar - included title and option for overlay layout.
+
+= 1.6.7 =
+* In the previous update a title with default text ‘This website uses cookies‘ would get added to the existing cookie bar. In this update this title will get removed to that it is blank by default. In case you need this to be added again you need to explicitly add suitable content for the title.
+* Addressed the conflict with [cookie_reject] shortcode for previous users who had the reject button option enabled.
+* Optimized the plugin js and css assets to render only in plugin pages.
