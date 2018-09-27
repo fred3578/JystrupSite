@@ -28,7 +28,7 @@
     </button>
 
     <div class="collapse navbar-collapse">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="http://localhost/JystrupSite/">
             <?php bloginfo('name'); ?>
         </a>
         </div>
