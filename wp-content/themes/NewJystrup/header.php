@@ -19,22 +19,23 @@
 
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+
+<body class <?php body_class(); ?>>
 <!-- bg-primary, bg-success, bg-warning, bg-info, bg-danger, bg-dark, bg-light -->
-<nav id="site-navigation" class="navbar navbar-expand-md navbar-primary sticky-top bg-danger">
+<nav id="site-navigation" class="navbar navbar-expand-md navbar-primary sticky-top bg-dark">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="htpp://localhost/JystrupSite/">
             <?php bloginfo('name'); ?>
         </a>
         </div>
-    <div id="navbarCollapse"
+    <div id="navbarCollapse">
     <?php
-    wp_nav_menu(array(
+    wp_nav_menu( array(
         'menu'            => 'primary',
         'container'       => 'div',
         'container_id'    => 'navbarCollapse',
@@ -42,8 +43,8 @@
         'menu_id'         => false,
         'menu_class'      => 'navbar-nav mr-auto',
         'depth'           => 0,
-        'fallback_cb'     => 'bs4navwalker::fallback',
-        'walker'          => new bs4navwalker(),
+        'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+        'walker'          => new wp_bootstrap_navwalker(),
             'theme_location' => 'my-custom-menu'
     ));
     ?>

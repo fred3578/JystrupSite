@@ -1,5 +1,5 @@
 <?php
-require_once('bs4navwalker.php');
+require_once('wp_bootstrap_navwalker.php');
 register_nav_menu('top', 'Top menu');
 function themebs_enqueue_styles() {
 
@@ -25,3 +25,4 @@ add_action('wp_enqueue_scripts','my_theme_enqueue_styles');
 function my_theme_enqueue_styles(){
     wp_enqueue_style('parent-style',get_template_directory_uri().'/style.css');
 }
+
