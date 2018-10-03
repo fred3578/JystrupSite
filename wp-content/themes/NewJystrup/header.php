@@ -10,13 +10,13 @@
 
     <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
-<meta name="description" content="">
-<meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<meta name="viewport" content="width=device-width">
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body class <?php body_class(); ?>>
