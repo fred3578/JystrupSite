@@ -4,7 +4,6 @@
 <!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -29,11 +28,12 @@
     </button>
 
     <div class="collapse navbar-collapse">
-        <a class="navbar-brand" href="htpp://localhost/JystrupSite/">
+        <a class="navbar-brand" href="http://localhost/JystrupSite/">
             <?php bloginfo('name'); ?>
         </a>
-        </div>
-    <div id="navbarCollapse">
+    </div>
+    
+    <div id="navbarCollapse">        
     <?php
     wp_nav_menu( array(
         'menu'            => 'primary',
