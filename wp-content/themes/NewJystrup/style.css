@@ -30,6 +30,14 @@ Text Domain: techguymedia
  * Globals
  */
 
+/*
+ * Forsøgte at tvinge footer ned på tomme sider.
+ 
+#posts {
+    min-height: 1000px !important; 
+}
+*/
+
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
@@ -182,8 +190,13 @@ h6, .h6 {
  * Footer
  */
 
+ .footer{
+    top: 100vh;
+    transform: translate(-100%,0);
+    position:fixed;
+    }
+
 footer {
-    position: absolute;
     bottom: 0;
     width: 100%;
     color: #999;

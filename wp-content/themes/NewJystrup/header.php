@@ -23,7 +23,7 @@
 <!-- bg-primary, bg-success, bg-warning, bg-info, bg-danger, bg-dark, bg-light -->
 <nav id="site-navigation" class="navbar navbar-expand-md navbar-primary sticky-top bg-dark">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -42,7 +42,7 @@
         'container_class' => 'collapse navbar-collapse',
         'menu_id'         => false,
         'menu_class'      => 'navbar-nav mr-auto',
-        'depth'           => 0,
+        'depth'           => 2,
         'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
         'walker'          => new wp_bootstrap_navwalker(),
             'theme_location' => 'my-custom-menu'
