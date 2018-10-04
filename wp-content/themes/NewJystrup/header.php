@@ -19,6 +19,8 @@
     <?php wp_head(); ?>
 </head>
 
+
+
 <body class <?php body_class(); ?>>
 <!-- bg-primary, bg-success, bg-warning, bg-info, bg-danger, bg-dark, bg-light -->
 <nav id="site-navigation" class="navbar navbar-expand-md navbar-primary sticky-top bg-dark">
@@ -27,26 +29,29 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
+<?php
+$WP_Array = wp_nav_menu( array(
+    'menu'            => 'primary',
+    'container'       => 'div',
+    'container_id'    => 'navbarCollapse',
+    'container_class' => 'collapse navbar-collapse',
+    'menu_id'         => false,
+    'menu_class'      => 'navbar-nav mr-auto',
+    'depth'           => 0,
+    'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+    'walker'          => new wp_bootstrap_navwalker(),
+        'theme_location' => 'my-custom-menu'
+));
+?>
+
     <div class="collapse navbar-collapse">
         <a class="navbar-brand" href="http://localhost/JystrupSite/">
             <?php bloginfo('name'); ?>
         </a>
     </div>
     
-    <div id="navbarCollapse">        
-    <?php
-    wp_nav_menu( array(
-        'menu'            => 'primary',
-        'container'       => 'div',
-        'container_id'    => 'navbarCollapse',
-        'container_class' => 'collapse navbar-collapse',
-        'menu_id'         => false,
-        'menu_class'      => 'navbar-nav mr-auto',
-        'depth'           => 2,
-        'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
-        'walker'          => new wp_bootstrap_navwalker(),
-            'theme_location' => 'my-custom-menu'
-    ));
-    ?>
+    <div id="navbarCollapse">     
+        <?php $WP_Array ?>
     </div>
+    
 </nav>
