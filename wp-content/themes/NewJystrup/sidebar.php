@@ -1,15 +1,17 @@
-<?php
-/**
- * The sidebar containing the main widget area.
- *
- * @package KFUM
- */
+<div id="wrapper">
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
-
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</div><!-- #secondary -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Brand
+                </a>
+            </li>
+            <li>
+                <a href="#">Link 1</a>
+            </li>
+            <li>
+                <a href="#">Link 2</a>
+            </li>
+        </ul>
+    </div>
