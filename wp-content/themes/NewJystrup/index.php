@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Other Content here -->
-<div id="posts" class="col-12">
+<div id="posts" class="card">
     <?php if ( have_posts() ) : while ( have_posts() ) :   the_post(); ?>
         
         <h2>

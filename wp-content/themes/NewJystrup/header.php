@@ -23,14 +23,22 @@
 
 <body class <?php body_class(); ?>>
 <!-- bg-primary, bg-success, bg-warning, bg-info, bg-danger, bg-dark, bg-light -->
-<nav id="site-navigation" class="navbar navbar-expand-md navbar-primary sticky-top bg-dark">
+<nav id="site-navigation" class="navbar navbar-expand-md sticky-top">
 
     <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-<?php
-$WP_Array = wp_nav_menu( array(
+
+
+    <div class="collapse navbar-collapse">
+        <a class="navbar-brand" href="http://localhost/JystrupSite/">
+           <!-- <?php bloginfo('name'); ?> -->
+        </a>
+    </div>
+
+    <?php
+    $WP_Array = wp_nav_menu( array(
     'menu'            => 'primary',
     'container'       => 'div',
     'container_id'    => 'navbarCollapse',
@@ -41,17 +49,9 @@ $WP_Array = wp_nav_menu( array(
     'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
     'walker'          => new wp_bootstrap_navwalker(),
         'theme_location' => 'my-custom-menu'
-));
-?>
+    ));
+    ?>
 
-    <div class="collapse navbar-collapse">
-        <a class="navbar-brand" href="http://localhost/JystrupSite/">
-            <?php bloginfo('name'); ?>
-        </a>
-    </div>
-    
-    <div id="navbarCollapse">     
-        <?php $WP_Array ?>
-    </div>
-    
+    <div id="navbarCollapse" class="table-responsive{-sm|-md|-lg|-xl}" <?php $WP_Array ?>></div>
+
 </nav>
