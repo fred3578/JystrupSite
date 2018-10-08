@@ -4,14 +4,14 @@
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="#">
-                    Brand
+                    Jystrup Sidebar
                 </a>
             </li>
             <li>
-                <a href="#">Link 1</a>
+                <a href="#">Facebook</a>
             </li>
             <li>
-                <a href="#">Link 2</a>
+                <a href="#">Reklamepunkt</a>
             </li>
         </ul>
     </div>
