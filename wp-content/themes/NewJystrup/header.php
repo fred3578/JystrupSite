@@ -19,7 +19,8 @@
     <?php wp_head(); ?>
 </head>
 
-
+<!-- image size of 1151x250-->
+<img src="img/DSC_0018hej.jpg" class="img-fluid" alt="Responsive image">
 
 <body class <?php body_class(); ?>>
 <!-- bg-primary, bg-success, bg-warning, bg-info, bg-danger, bg-dark, bg-light -->

@@ -251,15 +251,13 @@ iframe, object, embed {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-    padding-right: 250px;
+    
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
+    flex-shrink: 0;
+    z-index: 1;
+    position: absolute;
     right: 250px;
     width: 0;
     height: 100%;
@@ -290,12 +288,13 @@ iframe, object, embed {
 /* Sidebar Styles */
 
 .sidebar-nav {
-    position: absolute;
     top: 0;
     width: 250px;
     margin: 0;
     padding: 0;
     list-style: none;
+    z-index: 1;
+
 }
 
 .sidebar-nav li {
@@ -306,7 +305,7 @@ iframe, object, embed {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: white;
 }
 
 .sidebar-nav li a:hover {
@@ -327,7 +326,7 @@ iframe, object, embed {
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: white;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -375,13 +374,21 @@ iframe, object, embed {
 footer {
     bottom: 0;
     width: 100%;
-    color: #999;
+    color: royalblue;
     text-align: center;
-    background-color: #333;
+    background-color: black;
     border-top: 1px solid #fff;
 }
 
 footer p:last-child {
     margin-bottom: 0;
 }
-}
+
+/*
+ * Mainpage pictures
+ */
+
+ .img-fluid {
+    width: 100%;
+    height: 250px;
+  }
