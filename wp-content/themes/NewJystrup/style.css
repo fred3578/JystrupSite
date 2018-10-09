@@ -41,6 +41,7 @@ Text Domain: techguymedia
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;
+    background-color: #000;
 }
 
 h1, .h1,
@@ -66,13 +67,17 @@ h6, .h6,
     }
 }
 
+iframe, object, embed {
+    max-width: 100%;
+}
+
 
 /*
  * nav
  */
 
 /*
- * Navbar og dropdown color set 1
+ * Navbar, dropdown, footer color set 1
  * Grå navbar og dropdown
 
 
@@ -89,8 +94,20 @@ h6, .h6,
     padding-left: 20px;
     padding-right: 20px;
 }
-*/
 
+footer {
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    text-align: center;
+    background-color: rgb(150, 150, 150);
+    border-top: 1px solid #fff;
+}
+
+.site-title a{
+    color: #333;
+}
+*/
 
 /*
  * Navbar og dropdown color set 2
@@ -110,6 +127,19 @@ h6, .h6,
     padding-left: 20px;
     padding-right: 20px;
 }
+
+footer {
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    text-align: center;
+    background-color: #FE5B35;
+    border-top: 1px solid #fff;
+}
+
+.site-title a{
+    color: #333;
+}
 */
 
 
@@ -118,6 +148,7 @@ h6, .h6,
  * Sort navbar og grå dropdown
  * Husk at ændre navbar dropdown buttons farve!
 */
+
 .dropdown-menu {
     background-color: rgb(119, 119, 119) !important;
   }
@@ -132,9 +163,19 @@ h6, .h6,
     padding-right: 20px;
 }
 
-iframe, object, embed {
-    max-width: 100%;
+footer {
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    border-top: 1px solid #fff;
 }
+
+.site-title a{
+    color: white;
+}
+
 
 /*
  * Navbar og dropdown color set 4
@@ -152,6 +193,19 @@ iframe, object, embed {
     color: black;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    text-align: center;
+    background-color: forestgreen;
+    border-top: 1px solid #fff;
+}
+
+.site-title a{
+    color: black;
 }
 */
 
@@ -310,7 +364,7 @@ iframe, object, embed {
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: gray;
     background: rgba(255,255,255,0.2);
 }
 
@@ -330,7 +384,7 @@ iframe, object, embed {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
+    color: gray;
     background: none;
 }
 
@@ -371,6 +425,7 @@ iframe, object, embed {
     position:fixed;
     }
 
+<<<<<<< HEAD
 footer {
     bottom: 0;
     width: 100%;
@@ -392,3 +447,8 @@ footer p:last-child {
     width: 100%;
     height: 250px;
   }
+=======
+footer p:last-child {
+    margin-bottom: 0;
+}
+>>>>>>> 8c025d22c37fdd0417b18ec2aafff477264f9e26

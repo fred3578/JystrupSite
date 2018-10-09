@@ -1,5 +1,7 @@
 <?php get_header(); ?>
+
 <?php get_sidebar(); ?>
+
 <!-- Other Content here -->
 <div id="posts" class="card">
 
