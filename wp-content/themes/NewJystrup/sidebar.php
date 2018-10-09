@@ -1,3 +1,8 @@
+
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("sidebar-widgets") ) : ?>
+<?php endif;?>
+
+
 <div id="wrapper">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -7,6 +12,9 @@
             <li>
                 <a href="Post@jystrup.dk">Kontact os</a>
             </li>
+        </ul>
+        <ul class= "sidebar-widget-space">
+
         </ul>
     </div>
     </nav>

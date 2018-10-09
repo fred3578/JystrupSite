@@ -20,7 +20,7 @@
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.7
+ * @since      1.6.8
  *
  * @package    Cookie_Law_Info
  */

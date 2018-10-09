@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://www.webtoffee.com/product/gdpr-cookie-consent/
- * @since             1.6.7
+ * @since             1.6.8
  * @package           Cookie_Law_Info
  *
  * @wordpress-plugin
  * Plugin Name:       GDPR Cookie Consent
  * Plugin URI:        https://www.webtoffee.com/product/gdpr-cookie-consent/
  * Description:       A simple way to show your website complies with the EU Cookie Law / GDPR.
- * Version:           1.6.7
+ * Version:           1.6.8
  * Author:            WebToffee
  * Author URI:        http://cookielawinfo.com/
  * License:           GPLv3
@@ -63,7 +63,7 @@ define ( 'CLI_POST_TYPE','cookielawinfo');
  * Currently plugin version.
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CLI_VERSION', '1.6.7' );
+define( 'CLI_VERSION', '1.6.8' );
 
 
 /**
@@ -144,7 +144,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-cookie-law-info.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.6.7
+ * @since    1.6.8
  */
 function run_cookie_law_info() {
 

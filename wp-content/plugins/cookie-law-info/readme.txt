@@ -4,7 +4,7 @@ Donate link: https://www.webtoffee.com/plugins/
 Tags: eu cookie law, GDPR, cookie law, cookie consent, eu privacy directive, privacy directive, cookies, privacy, compliance
 Requires at least: 3.3.1
 Tested up to: 4.9.8
-Stable tag: 1.6.7
+Stable tag: 1.6.8
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -173,6 +173,13 @@ See http://cookielawinfo.com for more information on what is required.
 
 == Changelog ==
 
+
+= 1.6.8 =
+
+* Corrected German translations (thanks to Max B)
+* Bug in 'Show cookie bar on selected pages' Filter fixed
+* W3TC page cache compatibility added
+
 = 1.6.7 =
 
 * In the previous update a title with default text ‘This website uses cookies‘ would get added to the existing cookie bar. In this update this title will get removed to that it is blank by default. In case you need this to be added again you need to explicitly add suitable content for the title.
@@ -318,15 +325,7 @@ See http://cookielawinfo.com for more information on what is required.
 
 == Upgrade Notice ==
 
-= 1.6.5 =
-
-* Filter added. (filter to edit audit table head)
-
-= 1.6.6 =
-* Improved UI.
-* Enhancements to cookie message bar - included title and option for overlay layout.
-
-= 1.6.7 =
-* In the previous update a title with default text ‘This website uses cookies‘ would get added to the existing cookie bar. In this update this title will get removed to that it is blank by default. In case you need this to be added again you need to explicitly add suitable content for the title.
-* Addressed the conflict with [cookie_reject] shortcode for previous users who had the reject button option enabled.
-* Optimized the plugin js and css assets to render only in plugin pages.
+= 1.6.8 =
+* Corrected German translations (thanks to Max B)
+* Bug in 'Show cookie bar on selected pages' Filter fixed
+* W3TC page cache compatibility added

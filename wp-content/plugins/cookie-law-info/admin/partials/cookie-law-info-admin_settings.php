@@ -54,15 +54,15 @@ $cli_activation_status=get_option($plugin_name.'_activation_status');
                 {
                     wp_nonce_field('cookielawinfo-update-' . CLI_SETTINGS_FIELD);
                 }
-                $setting_views_a=[
+                $setting_views_a=array(
                     'admin-settings-general.php',
                     'admin-settings-messagebar.php',
                     'admin-settings-buttons.php',                      
                     'admin-settings-advanced.php',          
-                ];
-                $setting_views_b=[           
+                );
+                $setting_views_b=array(           
                     'admin-settings-help.php',           
-                ];
+                );
                 foreach ($setting_views_a as $value) 
                 {
                     $settings_view=$cli_admin_view_path.$value;

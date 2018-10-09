@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.7
+ * @since      1.6.8
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/admin
@@ -25,7 +25,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -53,7 +53,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -67,7 +67,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 */
 	public function enqueue_styles() {
 
@@ -83,14 +83,14 @@ class Cookie_Law_Info_Admin {
 		 * class.
 		 */
 		wp_enqueue_style( 'wp-color-picker' );
-		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-admin-'.$this->version.'.css', array(), null, 'all' );
+		wp_register_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-admin.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 */
 	public function enqueue_scripts() {
 
@@ -106,7 +106,7 @@ class Cookie_Law_Info_Admin {
 		 * class.
 		 */
 
-		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cookie-law-info-admin-'.$this->version.'.js', array( 'jquery' ,'wp-color-picker'), null, false );
+		wp_register_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cookie-law-info-admin.js', array( 'jquery' ,'wp-color-picker'), $this->version, false );
 
 	}
 

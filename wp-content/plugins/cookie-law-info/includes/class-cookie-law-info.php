@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.7
+ * @since      1.6.8
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.6.7
+ * @since      1.6.8
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
  * @author     WebToffee <info@webtoffee.com>
@@ -33,7 +33,7 @@ class Cookie_Law_Info {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   protected
 	 * @var      Cookie_Law_Info_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class Cookie_Law_Info {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class Cookie_Law_Info {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -66,7 +66,7 @@ class Cookie_Law_Info {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 */
 	public function __construct() 
 	{
@@ -76,7 +76,7 @@ class Cookie_Law_Info {
 		} 
 		else 
 		{
-			$this->version = '1.6.7';
+			$this->version = '1.6.8';
 		}
 		$this->plugin_name = 'cookie-law-info';
 
@@ -100,7 +100,7 @@ class Cookie_Law_Info {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -138,7 +138,7 @@ class Cookie_Law_Info {
 	 * Uses the Cookie_Law_Info_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -153,7 +153,7 @@ class Cookie_Law_Info {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -187,7 +187,7 @@ class Cookie_Law_Info {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 */
 	private function define_public_hooks() 
@@ -202,7 +202,7 @@ class Cookie_Law_Info {
 		$plugin_public->common_modules();
 
 		//below hook's functions needs update
-
+		$this->loader->add_action( 'init',$plugin_public,'other_plugin_compatibility');
   		$this->loader->add_action( 'wp_footer',$plugin_public,'cookielawinfo_inject_cli_script');
   		$this->loader->add_action('wp_head',$plugin_public,'include_user_accepted_cookielawinfo');
   		$this->loader->add_action('wp_footer',$plugin_public,'include_user_accepted_cookielawinfo_in_body');
@@ -211,7 +211,7 @@ class Cookie_Law_Info {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 */
 	public function run() {
 		$this->loader->run();
@@ -221,7 +221,7 @@ class Cookie_Law_Info {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.6.7
+	 * @since     1.6.8
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
@@ -231,7 +231,7 @@ class Cookie_Law_Info {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.6.7
+	 * @since     1.6.8
 	 * @return    Cookie_Law_Info_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -241,7 +241,7 @@ class Cookie_Law_Info {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.6.7
+	 * @since     1.6.8
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {

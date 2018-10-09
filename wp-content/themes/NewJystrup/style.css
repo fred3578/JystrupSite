@@ -444,6 +444,15 @@ footer p:last-child {
     height: 250px;
   }
 
-footer p:last-child {
-    margin-bottom: 0;
+/*
+ *Frontpage/Justrup button 
+ */
+ .menu-item-263 {
+	font-weight: bold;
+}
+
+.sidebar-widget-space{
+    position: absolute;
+    margin-right: -250px;
+    right: 250px;
 }

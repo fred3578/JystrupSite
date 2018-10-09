@@ -26,3 +26,15 @@ function my_theme_enqueue_styles(){
     wp_enqueue_style('parent-style',get_template_directory_uri().'/style.css');
 }
 
+function justrup_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'sidebar-widgets',
+		'id'            => 'sidebar-wrapper',
+		'before_widget' => '<div id="sidebar-brand">',
+		'after_widget'  => '</div>',
+	) );
+
+}
+add_action( 'widgets_init', 'justrup_widgets_init' );
+?>

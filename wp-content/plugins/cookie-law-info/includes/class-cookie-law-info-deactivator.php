@@ -4,7 +4,7 @@
  * Fired during plugin deactivation
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.7
+ * @since      1.6.8
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
- * @since      1.6.7
+ * @since      1.6.8
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
  * @author     WebToffee <info@webtoffee.com>
@@ -27,7 +27,7 @@ class Cookie_Law_Info_Deactivator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 */
 	public static function deactivate() 
 	{

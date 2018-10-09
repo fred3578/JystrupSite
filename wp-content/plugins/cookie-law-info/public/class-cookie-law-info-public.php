@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.7
+ * @since      1.6.8
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/public
@@ -25,7 +25,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -58,7 +58,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -74,7 +74,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 */
 	public function enqueue_styles() {
 
@@ -92,17 +92,17 @@ class Cookie_Law_Info_Public {
 		$the_options = Cookie_Law_Info::get_settings();
 		if ( $the_options['is_on'] == true ) 
 		{
-			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-public-'.$this->version.'.css', array(), null, 'all' );
-			wp_enqueue_style( $this->plugin_name.'-gdpr', plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-gdpr-'.$this->version.'.css', array(),null, 'all' );
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-public.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name.'-gdpr', plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-gdpr.css', array(),$this->version, 'all' );
 			//this style will include only when shortcode is called
-			wp_register_style( $this->plugin_name.'-table', plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-table-'.$this->version.'.css', array(),null, 'all' );
+			wp_register_style( $this->plugin_name.'-table', plugin_dir_url( __FILE__ ) . 'css/cookie-law-info-table.css', array(),$this->version, 'all' );
 		}
 	}
 
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since    1.6.7
+	 * @since    1.6.8
 	 */
 	public function enqueue_scripts() {
 
@@ -126,7 +126,7 @@ class Cookie_Law_Info_Public {
 	            'cookielist' => array(),
 	            );
 
-			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cookie-law-info-public-'.$this->version.'.js', array( 'jquery' ),null, false );
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cookie-law-info-public.js', array( 'jquery' ),$this->version, false );
 			wp_localize_script( $this->plugin_name, 'Cli_Data', $cli_cookie_datas );
 	        wp_localize_script( $this->plugin_name, 'log_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
     	}
@@ -246,11 +246,18 @@ class Cookie_Law_Info_Public {
 		    {
 			    if(is_category() || is_tag())
 			    {
-			    	$post_slug =$current_obj->slug;
+			    	$post_slug =isset($current_obj->slug) ? $current_obj->slug : '';
+			    }
+			    elseif(is_archive())
+			    {
+			    	$post_slug =isset($current_obj->rewrite) && isset($current_obj->rewrite['slug']) ? $current_obj->rewrite['slug'] : '';
 			    }
 			    else
 			    {
-			    	$post_slug =$current_obj->slug;
+			    	if(isset($current_obj->post_name))
+			    	{
+			    		$post_slug =$current_obj->post_name;
+			    	}			    	
 			    }
 			}		    
 		    $notify_html = apply_filters('cli_show_cookie_bar_only_on_selected_pages',$notify_html,$post_slug);
@@ -297,4 +304,38 @@ class Cookie_Law_Info_Public {
 		    }
 	    }
 	}
+
+	public function other_plugin_compatibility()
+	{
+		if(!is_admin())
+		{
+			add_action('wp_head',array($this,'other_plugin_clear_cache'));
+			//cache clear===========
+			if(isset($_GET['cli_action']))
+			{
+		        // W3 Total Cache
+		        if(function_exists('w3tc_flush_all')) 
+		        {
+		          	w3tc_flush_all();
+		        } 
+			}
+			//cache clear============
+		}
+	}
+	public function other_plugin_clear_cache()
+	{
+		$cli_flush_cache=2;
+        // W3 Total Cache
+        if(function_exists('w3tc_flush_all')) 
+        {
+          	$cli_flush_cache=1;
+        }
+		?>
+		<script type="text/javascript">
+			var cli_flush_cache=<?php echo $cli_flush_cache; ?>;
+		</script>
+		<?php
+	}
+
+
 }
