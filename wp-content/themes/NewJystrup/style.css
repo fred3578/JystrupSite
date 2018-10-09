@@ -423,10 +423,6 @@ footer {
     top: 100vh;
     transform: translate(-100%,0);
     position:fixed;
-    }
-
-<<<<<<< HEAD
-footer {
     bottom: 0;
     width: 100%;
     color: royalblue;
@@ -447,8 +443,7 @@ footer p:last-child {
     width: 100%;
     height: 250px;
   }
-=======
+
 footer p:last-child {
     margin-bottom: 0;
 }
->>>>>>> 8c025d22c37fdd0417b18ec2aafff477264f9e26
