@@ -240,7 +240,7 @@ class Advanced_Ads_Ad_List_Filters {
 			// and only on the ad list page.
 			$request = wp_unslash( $_REQUEST );
 			$server  = wp_unslash( $_SERVER );
-			if ( false !== strpos( $server['PHP_SELF'], 'edit.php' ) && isset( $request['post_type'] ) && 'advanced_ads' === $request['post_type'] ) {
+			if ( false !== strpos( $server['PHP_SELF'], 'edit.php' ) && isset( $request['post_type'] ) && Advanced_Ads::POST_TYPE_SLUG === $request['post_type'] ) {
 				$orderby = 'post_title ASC';
 			}
 		}
@@ -259,8 +259,8 @@ class Advanced_Ads_Ad_List_Filters {
 		}
 
 		// If for some reason, requested posts are not ads, abort everything.
-		if ( count( $posts ) && isset( $_REQUEST['post_type'] ) && 'advanced_ads' === $_REQUEST['post_type'] ) {
-			if ( 'advanced_ads' !== $posts[0]->post_type ) {
+		if ( count( $posts ) && isset( $_REQUEST['post_type'] ) && Advanced_Ads::POST_TYPE_SLUG === $_REQUEST['post_type'] ) {
+			if ( Advanced_Ads::POST_TYPE_SLUG !== $posts[0]->post_type ) {
 				return $posts;
 			}
 		}
@@ -277,7 +277,7 @@ class Advanced_Ads_Ad_List_Filters {
 			// and only on the ad list page.
 			$request = wp_unslash( $_REQUEST );
 			$server  = wp_unslash( $_SERVER );
-			if ( false !== strpos( $server['PHP_SELF'], 'edit.php' ) && isset( $request['post_type'] ) && 'advanced_ads' === $request['post_type'] ) {
+			if ( false !== strpos( $server['PHP_SELF'], 'edit.php' ) && isset( $request['post_type'] ) && Advanced_Ads::POST_TYPE_SLUG === $request['post_type'] ) {
 				$this->collect_all_ads( $posts );
 			}
 			return $posts;

@@ -589,7 +589,14 @@ jQuery( document ).ready(function ($) {
 			jQuery( '#advads_xml_content' ).hide();
 		}
 	});
+
+	// Find Adsense Auto Ads inside ad content.
+	var ad_content = jQuery('textarea[name=advanced_ad\\[content\\]]').html();
+	if ( ad_content && ad_content.indexOf( 'enable_page_level_ads' ) !== -1 ) {
+		advads_show_adsense_auto_ads_warning();
+	}
 });
+
 
 /**
  * store the action hash in settings form action
@@ -775,6 +782,28 @@ function advads_maybe_textarea_to_tinymce( ad_type ) {
 		tinymce_id_ws.prop('name', textarea.prop( 'name' ) );
 		tinymce_wrapper_div.show();
 	}
+}
+
+/**
+ * Show a message depending on whether Adsense Auto ads are enabled.
+ */
+function advads_show_adsense_auto_ads_warning() {
+	$msg = jQuery( '.advads-auto-ad-in-ad-content' ).show();
+	$msg.on( 'click', 'button', function() {
+		$msg.hide();
+		jQuery.ajax( {
+			type: 'POST',
+			url: ajaxurl,
+			data: {
+				action: 'advads-adsense-enable-pla',
+				nonce: advadsglobal.ajax_nonce
+			},
+		} ).done(function( data ) {
+			$msg.show().html( advadstxt.page_level_ads_enabled );
+		} ).fail(function( jqXHR, textStatus ) {
+			$msg.show();
+		} );
+	});
 }
 
 // Change JQueryUI names to fix name collision with other libraries, eg. Bootstrap

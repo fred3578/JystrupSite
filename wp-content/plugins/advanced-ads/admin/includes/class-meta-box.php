@@ -190,6 +190,22 @@ class Advanced_Ads_Admin_Meta_Boxes {
 				'class' =>'advads-ad-notice-https-missing error'
 			);
 		}
+
+		if ( 'ad-parameters-box' === $box['id'] ) {
+			$auto_ads_strings = Advanced_Ads_AdSense_Admin::get_auto_ads_messages();
+
+			if ( Advanced_Ads_AdSense_Data::get_instance()->is_page_level_enabled() ) {
+				$warnings[] = array(
+					'text' => $auto_ads_strings['enabled'],
+					'class' => 'advads-auto-ad-in-ad-content hidden error'
+				);
+			} else {
+				$warnings[] = array(
+					'text' => $auto_ads_strings['disabled'],
+					'class' => 'advads-auto-ad-in-ad-content hidden error'
+				);
+			}
+		}
 		
 		$warnings = apply_filters( 'advanced-ads-ad-notices', $warnings, $box, $post );
 		echo '<ul id="' .$box['id'].'-notices" class="advads-metabox-notices">';

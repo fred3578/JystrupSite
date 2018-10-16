@@ -26,7 +26,7 @@ class Advanced_Ads_AdSense_Public {
 
 		// Inject CSS to make AdSense background transparent.
 		if ( ! empty( $options['background'] ) ) {
-			echo '<style>ins.adsbygoogle { background-color: transparent; }</style>';
+			echo '<style>ins.adsbygoogle { background-color: transparent; padding: 0; }</style>';
 		}
 
 		$privacy_options = Advanced_Ads_Privacy::get_instance()->options();

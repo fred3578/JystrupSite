@@ -43,15 +43,9 @@ class Advanced_Ads_AdSense_Admin {
 			<script type="text/javascript">
 				var gadsenseData = {
 					pubId : '<?php echo $pub_id; ?>',
-					pageLevelEnabled: '<?php echo $db->is_page_level_enabled(); ?>',
 					msg : {
 						unknownAd : '<?php esc_attr_e( "The ad details couldn't be retrieved from the ad code", 'advanced-ads' ); ?>',
 						pubIdMismatch : '<?php esc_attr_e( 'Warning : The AdSense account from this code does not match the one set with the Advanced Ads Plugin. This ad might cause troubles when used in the front end.', 'advanced-ads' ); ?>',
-						pageLevelEnabled: '<?php _e( sprintf(__( 'Page-Level ads are already activated in the <a href="%s">AdSense settings</a>. No need to add them manually.', 'advanced-ads' ), admin_url( 'admin.php?page=advanced-ads-settings#top#adsense' ) ) ); ?>',
-						pageLevelDisabled: '<?php
-							printf( '%s <button id="adsense_enable_pla" type="button" class="button">%s</button>',
-								esc_attr__( 'This type of ad code is set up in the AdSense settings. Click on the following button to enable it now.', 'advanced-ads' ),
-								esc_attr__( 'Activate', 'advanced-ads' ) ); ?>'
 					},
 					pagenow: '<?php echo $pagenow ?>',
 				};
@@ -252,8 +246,16 @@ class Advanced_Ads_AdSense_Admin {
                 $page_level = $options['page-level-enabled'];
 
                 ?><label><input type="checkbox" name="<?php echo GADSENSE_OPT_NAME; ?>[page-level-enabled]" value="1" <?php checked( $page_level ); ?> />
-		<?php _e( 'Insert the AdSense header code used for verification and the Auto Ads feature.', 'advanced-ads' ); ?></label>
-                <p class="description"><?php printf(__( 'This code might also activate Auto ads. Please read <a href="%s" target="_blank">this article</a> if <strong>ads appear in random places</strong>.', 'advanced-ads' ), ADVADS_URL . 'adsense-in-random-positions-auto-ads/#utm_source=advanced-ads&utm_medium=link&utm_campaign=backend-autoads-ads' ); ?></p><?php
+		<?php esc_attr_e( 'Insert the AdSense header code used for verification and the Auto Ads feature.', 'advanced-ads' ); 
+		if( !empty( $options['adsense-id'] ) ) :
+		    ?>&nbsp;<a href="https://www.google.com/adsense/new/u/0/<?php echo $options['adsense-id']; ?>/myads/auto-ads" target="_blank"><?php /**
+		    * translators: this is the text for a link to a sub-page in an AdSense account
+		    */
+		   esc_attr_e( 'Adjust Auto ads options', 'advanced-ads' ); ?></a>
+		<?php endif; ?>
+                </label><p class="description"><?php printf(__( 'Please read <a href="%s" target="_blank">this article</a> if <strong>ads appear in random places</strong>.', 'advanced-ads' ), ADVADS_URL . 'adsense-in-random-positions-auto-ads/#utm_source=advanced-ads&utm_medium=link&utm_campaign=backend-autoads-ads' ); ?></p>
+                <p class="description"><a href="<?php echo ADVADS_URL . 'adsense-auto-ads-wordpress/#Display_Auto_Ads_only_on_specific_pages'; ?>" target="_blank"><?php esc_attr_e( 'Display Auto ads only on specific pages', 'advanced-ads' ); ?></a></p>
+                <p class="description"><a href="<?php echo ADVADS_URL . 'adsense-auto-ads-wordpress/#AMP_Auto_Ads'; ?>" target="_blank"><?php esc_attr_e( 'Auto ads on AMP pages', 'advanced-ads' ); ?></a></p><?php
 	}
 
 	/**
@@ -406,6 +408,20 @@ class Advanced_Ads_AdSense_Admin {
 	    
 	    
 	    return $notices;
+	}
+
+	/**
+	 * Get Auto Ads messages.
+	 */
+	public static function get_auto_ads_messages() {
+		return array(
+			'enabled' => sprintf(__( 'The AdSense verification and Auto ads code is already activated in the <a href="%s">AdSense settings</a>.', 'advanced-ads' ), 
+				admin_url( 'admin.php?page=advanced-ads-settings#top#adsense' ) )
+		    . ' ' . __( 'No need to add the code manually here, unless you want to include it into certain pages only.', 'advanced-ads' ),
+			'disabled' => sprintf( '%s <button id="adsense_enable_pla" type="button" class="button">%s</button>',
+				sprintf ( __( 'The AdSense verification and Auto ads code should be set up in the <a href="%s">AdSense settings</a>. Click on the following button to enable it now.', 'advanced-ads' ), admin_url( 'admin.php?page=advanced-ads-settings#top#adsense' ) ),
+				esc_attr__( 'Activate', 'advanced-ads' ) )
+		);
 	}
 
 }

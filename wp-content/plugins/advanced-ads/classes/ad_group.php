@@ -230,7 +230,7 @@ class Advanced_Ads_Group {
 			}
 		}
 
-		if ( ! isset( $args['global_output'] ) || $args['global_output'] ) {
+		if ( ! isset( $this->ad_args['global_output'] ) || $this->ad_args['global_output'] ) {
 			// add the group to the global output array
 			$advads = Advanced_Ads::get_instance();
 			$advads->current_ads[] = array('type' => 'group', 'id' => $this->id, 'title' => $this->name);

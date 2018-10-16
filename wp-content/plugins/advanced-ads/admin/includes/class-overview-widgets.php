@@ -63,6 +63,9 @@ class Advanced_Ads_Overview_Widgets_Callbacks {
 		if ( count( $recent_ads ) == 0 ) :
 			echo '<p><a class="button button-primary" href="' . admin_url( 'post-new.php?post_type=' . Advanced_Ads::POST_TYPE_SLUG ) .
 			'">' . __( 'Create your first ad', 'advanced-ads' ) . '</a></p>';
+			// Connect to AdSense
+			echo '<p><a class="button button-primary" href="' . admin_url( 'admin.php?page=advanced-ads-settings#top#adsense' ) .
+			'">' . esc_attr__( 'Connect to AdSense', 'advanced-ads' ) . '</a></p>';
 			$primary_taken = true;
 		endif;
 	    

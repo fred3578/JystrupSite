@@ -22,7 +22,9 @@ class Advanced_Ads_Admin_Ad_Type {
 		add_filter( 'manage_advanced_ads_posts_columns', array($this, 'ad_list_columns_head') ); // extra column
 		add_filter( 'manage_advanced_ads_posts_custom_column', array($this, 'ad_list_columns_content'), 10, 2 ); // extra column
 		add_filter( 'manage_advanced_ads_posts_custom_column', array($this, 'ad_list_columns_timing'), 10, 2 ); // extra column
+		add_filter( 'manage_advanced_ads_posts_custom_column', array($this, 'ad_list_columns_shortcode'), 10, 2 ); // extra column
 		add_action( 'restrict_manage_posts', array( $this, 'ad_list_add_filters') );
+		add_filter( 'default_hidden_columns', array( $this, 'hide_ad_list_columns' ), 10, 2 ); // hide the ad shortcode column by default
 
 		// ad updated messages
 		add_filter( 'bulk_post_updated_messages', array($this, 'ad_bulk_update_messages'), 10, 2 );
@@ -80,11 +82,13 @@ class Advanced_Ads_Admin_Ad_Type {
 				if ( $key == 'title' ){
 					$new_columns[ 'ad_details' ] = __( 'Ad Details', 'advanced-ads' );
 					$new_columns[ 'ad_timing' ] = __( 'Ad Planning', 'advanced-ads' );
+					$new_columns[ 'ad_shortcode' ] = __( 'Ad Shortcode', 'advanced-ads' );
 				}
 			}
 		} else {
 			$new_columns[ 'ad_details' ] = __( 'Ad Details', 'advanced-ads' );
 			$new_columns[ 'ad_timing' ] = __( 'Ad Planning', 'advanced-ads' );
+			$new_columns[ 'ad_shortcode' ] = __( 'Ad Shortcode', 'advanced-ads' );
 		}
 
 		// white-listed columns
@@ -93,6 +97,7 @@ class Advanced_Ads_Admin_Ad_Type {
 		    'title',
 		    'ad_details',
 		    'ad_timing',
+		    'ad_shortcode',
 		    'taxonomy-advanced_ads_groups',
 		) );
 
@@ -172,9 +177,42 @@ class Advanced_Ads_Admin_Ad_Type {
 	}
 
 	/**
+	 * display ad shortcode in ads list
+	 *
+	 * @since 1.8.2
+	 * @param string $column_name name of the column
+	 * @param int $ad_id id of the ad
+	 */
+	public function  ad_list_columns_shortcode($column_name, $ad_id) {
+		if ( $column_name == 'ad_shortcode' ) {
+			$ad = new Advanced_Ads_Ad( $ad_id );
+		
+			include ADVADS_BASE_PATH . 'admin/views/ad-list-shortcode-column.php';
+		}
+	}
+	
+	/**
+	 * display ad shortcode in ads list
+	 *
+	 * @since 1.10.5
+	 * @param array	    $hidden An array of columns hidden by default.
+	 * @param WP_Screen $screen WP_Screen object of the current screen.
+	 */
+	public function hide_ad_list_columns( $hidden, $screen ) {
+	    
+		if( isset( $screen->id ) && 'edit-' . Advanced_Ads::POST_TYPE_SLUG === $screen->id ){
+		    
+			$hidden[] = 'ad_shortcode';
+			
+		}
+		
+		return $hidden;
+	}
+
+	/**
 	 * adds filter dropdowns before the 'Filter' button on the ad list table
 	 */
-	function ad_list_add_filters() {
+	public function ad_list_add_filters() {
 		$screen = get_current_screen();
 		if ( ! isset( $screen->id ) || $screen->id !== 'edit-advanced_ads' ) {
 			return;

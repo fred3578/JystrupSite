@@ -5,15 +5,15 @@
 	<h3><?php _e( 'Get Started', 'advanced-ads' ); ?></h3>
 	<a href="<?php echo admin_url( 'post-new.php?post_type=advanced_ads' ); ?>" class="button button-primary"><?php _e( 'Create your first ad', 'advanced-ads' ); ?></a>
 	<ul>
-	    <li><a href="<?php echo ADVADS_URL . 'manual/first-ad/#utm_source=advanced-ads&utm_medium=link&utm_campaign=welcome-first-ad'; ?>" target="_blank"><?php _e( 'First ad tutorial', 'advanced-ads' ); ?></a></li>
+		<li><a href="<?php echo ADVADS_URL . 'manual/first-ad/#utm_source=advanced-ads&utm_medium=link&utm_campaign=welcome-first-ad'; ?>" target="_blank"><?php _e( 'First ad tutorial', 'advanced-ads' ); ?></a></li>
 	</ul>
 </div>
 <div class="aa-welcome-panel-column">
 	<h3><?php _e( 'AdSense Options', 'advanced-ads' ); ?></h3>
 	<a href="<?php echo admin_url( 'admin.php?page=advanced-ads-settings#top#adsense' ); ?>" class="button button-primary"><?php _e( 'Import ads from AdSense', 'advanced-ads' ); ?></a>
 	<ul>
-	    <li><a href="<?php echo ADVADS_URL . 'manual/adsense-ads/#utm_source=advanced-ads&utm_medium=link&utm_campaign=welcome-auto-ads'; ?>" target="_blank"><?php _e( 'Setting up Auto ads', 'advanced-ads' ); ?></a></li>
-	    <li><a href="<?php echo ADVADS_URL . 'manual/adsense-ads/#utm_source=advanced-ads&utm_medium=link&utm_campaign=welcome-adsense'; ?>" target="_blank"><?php _e( 'Setting up AdSense ads manually', 'advanced-ads' ); ?></a></li>
+		<li><a href="<?php echo ADVADS_URL . 'adsense-auto-ads-wordpress/#utm_source=advanced-ads&utm_medium=link&utm_campaign=welcome-auto-ads'; ?>" target="_blank"><?php _e( 'Setting up Auto ads', 'advanced-ads' ); ?></a></li>
+		<li><a href="<?php echo ADVADS_URL . 'place-adsense-ad-unit-manually/#utm_source=advanced-ads&utm_medium=link&utm_campaign=welcome-adsense'; ?>" target="_blank"><?php _e( 'Setting up AdSense ads manually', 'advanced-ads' ); ?></a></li>
 	</ul>
 </div>
 <div class="aa-welcome-panel-column aa-welcome-panel-last">

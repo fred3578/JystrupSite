@@ -98,7 +98,7 @@ $has_token = Advanced_Ads_AdSense_MAPI::has_token( $adsense_id );
 	} 	
 </style>
 <?php else : ?>
-<p><?php printf(__( 'Problems with AdSense? Check out the <a href="%s" target="_blank">manual</a> and get a free setup check.', 'advanced-ads' ), ADVADS_URL . 'manual/adsense-ads/#utm_source=advanced-ads&utm_medium=link&utm_campaign=adsense-manual-check' ); ?></p>
+<p><?php printf(__( 'Problems with AdSense? Check out the <a href="%s" target="_blank">manual</a> and get a free setup check.', 'advanced-ads' ), ADVADS_URL . 'adsense-ads/#utm_source=advanced-ads&utm_medium=link&utm_campaign=adsense-manual-check' ); ?></p>
 <?php endif; ?>
 <?php if ( ! Advanced_Ads_Checks::php_version_minimum() ) : ?>
 <p class="advads-error-message"><?php _e( 'Can not connect AdSense account. PHP version is too low.', 'advanced-ads' ) ?></p>

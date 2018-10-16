@@ -98,9 +98,14 @@ jQuery( document ).ready(function () {
 		// save if plugin should be disabled
 		var disable_plugin = self.hasClass('advanced-ads-feedback-not-deactivate') ? false : true;
 			
-		jQuery( '#advanced-ads-feedback-overlay' ).hide();
+		// hide the content of the feedback form
+		jQuery( '#advanced-ads-feedback-content form' ).hide();
 		if ( self.hasClass('advanced-ads-feedback-submit') ) {
-			// show text field if there is one
+			// show feedback message
+			jQuery( '#advanced-ads-feedback-after-submit-waiting' ).show();
+			if( disable_plugin ){
+				jQuery( '#advanced-ads-feedback-after-submit-disabling-plugin' ).show();
+			}
 			jQuery.ajax({
 			    type: 'POST',
 			    url: ajaxurl,
@@ -111,26 +116,38 @@ jQuery( document ).ready(function () {
 				formdata: jQuery( '#advanced-ads-feedback-content form' ).serialize()
 			    },
 			    complete: function (MLHttpRequest, textStatus, errorThrown) {
-				    // deactivate the plugin and close the popup
-				    jQuery( '#advanced-ads-feedback-overlay' ).remove();
-				    console.log( disable_plugin );
+				    // deactivate the plugin and close the popup with a timeout
+				    setTimeout( function(){
+					    jQuery( '#advanced-ads-feedback-overlay' ).remove();
+				    }, 2000 )
 				    if( disable_plugin ){
 					window.location.href = advads_deactivate_link_url;
 				    }
 
 			    }
 			});
-		} else {
+		} else { // currently not reachable
 			jQuery( '#advanced-ads-feedback-overlay' ).remove();
 			window.location.href = advads_deactivate_link_url;
 		}
 	});
 	// close form and disable the plugin without doing anything
 	jQuery('.advanced-ads-feedback-only-deactivate').click(function ( e ) {
-		jQuery( '#advanced-ads-feedback-overlay' ).hide();
-		window.location.href = advads_deactivate_link_url;
+		// hide the content of the feedback form
+		jQuery( '#advanced-ads-feedback-content form' ).hide();
+		// show feedback message
+		jQuery( '#advanced-ads-feedback-after-submit-goodbye' ).show();
+		jQuery( '#advanced-ads-feedback-after-submit-disabling-plugin' ).show();
+		// wait 3 seconds
+		setTimeout(function(){
+			jQuery( '#advanced-ads-feedback-overlay' ).hide();
+			window.location.href = advads_deactivate_link_url;
+		}, 3000);
 	});
-
+	// close button for feedback form
+	jQuery('#advanced-ads-feedback-overlay-close-button').click(function ( e ) {
+		jQuery( '#advanced-ads-feedback-overlay' ).hide();
+	});
 });
 
 function advads_admin_get_cookie (name) {

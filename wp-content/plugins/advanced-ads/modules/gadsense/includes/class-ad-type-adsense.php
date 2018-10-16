@@ -215,7 +215,12 @@ class Advanced_Ads_Ad_Type_Adsense extends Advanced_Ads_Ad_Type_Abstract {
 				 */
 				$this->append_defaut_responsive_content( $output, $pub_id, $content );
 			}
+
+			// Remove float setting if this is a responsive ad unit without custom sizes.
+			unset( $ad->wrapper['style']['float'] );
 		}
+
+
 		return $output;
 	}
 

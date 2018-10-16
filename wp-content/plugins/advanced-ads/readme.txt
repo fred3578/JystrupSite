@@ -5,7 +5,7 @@ Tags: ads, ad manager, ad widget, ad rotation, adsense, advertise, advertisement
 Requires at least: 4.6
 Tested up to: 4.9
 Requires PHP: 5.4
-Stable tag: 1.10.4
+Stable tag: 1.10.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +26,7 @@ Are you looking for a simple ad manager plugin? These are the top arguments to u
 
 Would you like to know if there is a certain feature, what the optimized setup would be, or how to implement your client’s demands? Just [open a thread in the forum](https://wordpress.org/support/plugin/advanced-ads#new-post)!
 
-I built Advanced Ads based on my experience delivering millions of ads per month.
+Based on my experience as a publisher with millions of monthly served ads, I've developed Advanced Ads to be the best solution for WordPress ads.
 
 [Full Feature List](https://wpadvancedads.com/features/).
 
@@ -177,7 +177,8 @@ To get started, just take a look at
 
 * the [general first ad tutorial](https://wpadvancedads.com/manual/first-ad/) 
 * using [AdSense Auto ads](https://wpadvancedads.com/adsense-auto-ads-wordpress/) in WordPress 
-* the [AdSense overview page](https://wpadvancedads.com/manual/adsense-ads).
+* the [AdSense overview page](https://wpadvancedads.com/adsense-ads).
+* Ads not showing up? Take a look [here](https://wpadvancedads.com/manual/ads-not-showing-up).
 
 = What about my users’ privacy and GDPR? =
 
@@ -265,6 +266,27 @@ Yes. Advanced Ads is based on WordPress standards and therefore easily customiza
 9. Convert AdSense ads into AMP automatically (Responsive add-on)
 
 == Changelog ==
+
+= 1.10.7 =
+
+* reverted code optimization that broke some forms
+
+= 1.10.6 =
+
+* fixed HTML issue with paragraph index when saving the placement page
+
+= 1.10.5 =
+
+* improved list of ads imported from AdSense account
+* use width and height ad settings for image ads if they differ from the entered sizes
+* added option column with shortcode to the ad list. It is optional. Go to "Screen Options" at the top right of the ad list page to enable it
+* show warning if AdSense Auto ads code is used in ad code field
+* added a warning if Advanced Ads constants are enabled
+* prevented possible JavaScript error created by the Privacy module
+* extended "Transparent Background" option for AdSense to fix a border they have in some themes
+* removed ad block counter code when not used
+* updated add-on updater class
+* added a warning about floated responsive AdSense ads
 
 = 1.10.4 =
 

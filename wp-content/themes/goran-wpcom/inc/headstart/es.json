@@ -1,0 +1,269 @@
+{
+    "settings": {
+        "options": {
+            "show_on_front": "page"
+        },
+        "theme_mods": {
+            "0": false,
+            "header_textcolor": "ffffff",
+            "background_color": "e1dfdf",
+            "background_image": "",
+            "background_repeat": "repeat",
+            "background_position_x": "left",
+            "background_attachment": "scroll",
+            "edin_sidebar_position": "right",
+            "edin_thumbnail_style": "landscape",
+            "edin_title_front_page": false,
+            "goran_top_area_content": "Edit this message in the <a href=\"https://wordpress.com/customize/\">Customizer (Theme Options)</a>",
+            "nav_menu_locations": {
+                "primary": "primary",
+                "footer": "primary"
+            },
+            "edin_featured_page_one_front_page": "_hs_about_page",
+            "edin_featured_page_two_front_page": "_hs_contact_page",
+            "edin_featured_page_three_front_page": "_hs_blog_page",
+            "colors_manager": {
+                "colors": {
+                    "bg": "#e1dfdf",
+                    "link": "#e74f4e",
+                    "fg1": "#b23d3c",
+                    "fg2": "#a13736"
+                }
+            },
+            "edin_breadcrumbs": true
+        },
+        "headstart": {
+            "mapped_id_options": [],
+            "mapped_id_theme_mods": [
+                "edin_featured_page_one_front_page",
+                "edin_featured_page_two_front_page",
+                "edin_featured_page_three_front_page"
+            ]
+        }
+    },
+    "widgets": [
+        {
+            "id": "search-2",
+            "id_base": "search",
+            "settings": {
+                "title": ""
+            },
+            "sidebar": "sidebar-1",
+            "position": 0
+        },
+        {
+            "id": "widget_contact_info-2",
+            "id_base": "widget_contact_info",
+            "settings": {
+                "title": "Nuestra ubicación",
+                "address": "1-4 Langley Court\nLondres WC2E 9JY\nReino Unido",
+                "phone": "0102030456789",
+                "hours": "",
+                "lat": 51.5126373,
+                "lon": -0.1246993,
+                "showmap": 1
+            },
+            "sidebar": "sidebar-2",
+            "position": 0
+        },
+        {
+            "id": "text-3",
+            "id_base": "text",
+            "settings": {
+                "title": "Widget de texto",
+                "text": "Estos son algunos widgets de texto. El widget de texto te permite añadir texto o código HTML a tu barra lateral. Utiliza el widget de texto para mostrar enlaces, imágenes, HTML, texto o una combinación de todos estos elementos. Edítalos en la sección Widget del <a href=\"https://wordpress.com/customize/\">Personalizador</a>.",
+                "filter": true,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-3",
+            "position": 0
+        },
+        {
+            "id": "nav_menu-2",
+            "id_base": "nav_menu",
+            "settings": {
+                "title": "Síguenos",
+                "nav_menu": "social"
+            },
+            "sidebar": "sidebar-4",
+            "position": 0
+        },
+        {
+            "id": "text-3",
+            "id_base": "text",
+            "settings": {
+                "title": "Widget de texto",
+                "text": "Estos son algunos widgets de texto. El widget de texto te permite añadir texto o código HTML a tu barra lateral. Utiliza el widget de texto para mostrar enlaces, imágenes, HTML, texto o una combinación de todos estos elementos. Edítalos en la sección Widget del <a href=\"https://wordpress.com/customize/\">Personalizador</a>."
+            },
+            "sidebar": "sidebar-5",
+            "position": 0
+        },
+        {
+            "id": "text-4",
+            "id_base": "text",
+            "settings": {
+                "title": "Widgets de portada",
+                "text": "Para configurar esta parte de tu página de inicio, accede al <a href=\"https://wordpress.com/customize/\">Personalizador</a> y añade widgets a las zonas para widgets de página frontal.",
+                "filter": true,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-6",
+            "position": 0
+        },
+        {
+            "id": "text-2",
+            "id_base": "text",
+            "settings": {
+                "title": "Plantillas de página personalizada",
+                "text": "<p>Goran tiene cuatro plantillas de página personalizada que son perfectos para los sitios web corporativos o de empresas:</p>\n\n<ul>\n<li><a href=\"http://gorandemo.wordpress.com/\">Plantilla de portada</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/full-width-page/\">Plantilla de página a pantalla completa</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/grid-page/\">Plantilla de página de cuadrículas</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/alternate-sidebar-page/\">Plantilla de página de barra lateral alternativa</a></li>\n</ul>",
+                "filter": false,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-7",
+            "position": 0
+        }
+    ],
+    "content": [
+        {
+            "post_title": "Página de inicio",
+            "post_content": "Te damos la bienvenida a tu nuevo sitio.  Para editar esta página, haz clic en el enlace Editar.  Para obtener más información sobre cómo personalizar tu sitio, consulta <a href=\"http://learn.wordpress.com/\">http://learn.wordpress.com/</a>",
+            "post_excerpt": "Este es el extracto de la página de inicio",
+            "post_status": "publish",
+            "menu_order": 0,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_front_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 100,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-hero.jpg",
+            "page_template": "page-templates/front-page.php"
+        },
+        {
+            "post_title": "Acerca de",
+            "post_content": "Este es un ejemplo de una página Acerca de. A diferencia de las entradas, las páginas se ajustan mejor a un contenido atemporal como la información en las páginas Acerca de o Contacto, que quieres que sea más accesible. Haz clic en el enlace Editar para realizar cambios en esta página o <a href=\"https://wordpress.com/page\">añadir otra página</a>.",
+            "post_excerpt": "Este es solo un breve extracto de la página&nbsp;Acerca de.",
+            "post_status": "publish",
+            "menu_order": 1,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_about_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 101,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-grid-page.jpg"
+        },
+        {
+            "post_title": "Contacto",
+            "post_content": "Es una página de contacto con información básica y un formulario de contacto. [contact-form][contact-field label=\"Nombre\" type=\"name\" required=\"1\"/][contact-field label=\"Correo electrónico\" type=\"email\" required=\"1\"/][contact-field label=\"Sitio web\" type=\"url\"/][contact-field label=\"Comentario\" type=\"textarea\" required=\"1\"/][/contact-form]",
+            "post_excerpt": "Este es solo un breve extracto de la página&nbsp;Contacto",
+            "post_status": "publish",
+            "menu_order": 2,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_contact_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 102,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-full-width-page.jpg"
+        },
+        {
+            "post_title": "Blog",
+            "post_content": "Esta es la página donde los usuarios verán el blog de tu sitio",
+            "post_excerpt": "Este es solo un breve extracto de tu blog.",
+            "post_status": "publish",
+            "menu_order": 3,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_blog_page",
+            "hs_sharing": 1,
+            "hs_old_id": 103,
+            "hs_like_status": 1,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2016/06/alternate-sidebar1.jpg"
+        },
+        {
+            "post_title": "Primera entrada de blog",
+            "post_content": "Esta es tu primera entrada. Haz clic en el enlace Editar para modificarla o eliminarla, o bien <a href=\"https://wordpress.com/post\">crea una entrada nueva</a>. Si quieres, utiliza esta entrada para explicar a los lectores por qué has empezado este blog y qué planeas hacer con él.",
+            "post_excerpt": "Este es el extracto de tu primera entrada.",
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "post_type": "post",
+            "hs_custom_meta": "_hs_first_post",
+            "hs_sharing": 1,
+            "hs_like_status": 0,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-alternate-sidebar-page.jpg"
+        }
+    ],
+    "menus": {
+        "social": {
+            "name": "Social",
+            "items": [
+                {
+                    "menu-item-title": "Facebook",
+                    "menu-item-db-id": 111,
+                    "menu-item-object-id": "111",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 1,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://facebook.com"
+                },
+                {
+                    "menu-item-title": "Twitter",
+                    "menu-item-db-id": 112,
+                    "menu-item-object-id": "112",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 2,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://twitter.com"
+                },
+                {
+                    "menu-item-title": "Google Plus",
+                    "menu-item-db-id": 115,
+                    "menu-item-object-id": "115",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 3,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://plus.google.com"
+                },
+                {
+                    "menu-item-title": "Pinterest",
+                    "menu-item-db-id": 113,
+                    "menu-item-object-id": "113",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 4,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://pinterest.com"
+                },
+                {
+                    "menu-item-title": "Dribbble",
+                    "menu-item-db-id": 114,
+                    "menu-item-object-id": "114",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 5,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://dribbble.com"
+                }
+            ]
+        }
+    }
+}

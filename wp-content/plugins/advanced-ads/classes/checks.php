@@ -217,6 +217,41 @@ class Advanced_Ads_Checks {
 		return $missing_extensions;
 	}
 	
+	/**
+	 * Get the list of Advanced Ads constant defined by the user.
+	 *
+	 * @return array
+	 */
+	public static function get_defined_constants() {
+		$constants = apply_filters( 'advanced-ads-constants', array(
+			'ADVADS_ADS_DISABLED',
+			'ADVADS_ALLOW_ADSENSE_ON_404',
+			'ADVADS_DISABLE_RESPONSIVE_IMAGES',
+			'ADVANCED_ADS_AD_DEBUG_FOR_ADMIN_ONLY',
+			'ADVANCED_ADS_DISABLE_ANALYTICS_ANONYMIZE_IP',
+			'ADVANCED_ADS_DISABLE_CHANGE',
+			'ADVANCED_ADS_DISABLE_CODE_HIGHLIGHTING',
+			'ADVANCED_ADS_DISABLE_FRONTEND_AD_WEIGHT_UPDATE',
+			'ADVANCED_ADS_DISABLE_SHORTCODE_BUTTON',
+			'ADVANCED_ADS_DISALLOW_PHP',
+			'ADVANCED_ADS_ENABLE_REVISIONS',
+			'ADVANCED_ADS_PRO_CUSTOM_POSITION_MOVE_INTO_HIDDEN',
+			'ADVANCED_ADS_PRO_PAGE_IMPR_EXDAYS',
+			'ADVANCED_ADS_PRO_REFERRER_EXDAYS',
+			'ADVANCED_ADS_RESPONSIVE_DISABLE_BROWSER_WIDTH',
+			'ADVANCED_ADS_SUPPRESS_PLUGIN_ERROR_NOTICES',
+			'ADVANCED_ADS_TRACKING_DEBUG',
+			'ADVANCED_ADS_TRACKING_NO_HOURLY_LIMIT',
+		) );
+
+		$result = array();
+		foreach ( $constants as $constant ) {
+			if ( defined( $constant ) ) {
+				$result[] = $constant;
+			}
+		}
+		return $result;
+	}
 	
 	/**
 	 * check for potential jQuery errors

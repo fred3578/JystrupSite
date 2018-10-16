@@ -22,7 +22,7 @@
 #advads-overview #advads_overview_addons table th { vertical-align: top; font-weight: bold; max-width: 300px; position: relative; top: 0; }
 #advads-overview #advads_overview_addons table tr.recommended th:before { position:absolute; top: 2px; left: 10px; font-size: .9em; content: 'Recommended'; color: green; font-weight: normal; }
 #advads-overview #advads_overview_addons table tr.free th:before { position:absolute; top: 2px; left: 10px; font-size: .9em; content: 'Free'; color: green; }
-#advads-overview #advads_overview_addons table tr.recommended th, 
+#advads-overview #advads_overview_addons table tr.recommended th,
 #advads-overview #advads_overview_addons table tr.free th { padding-top: 20px; }
 #advads_overview_news .button-primary { margin-left: 0; }
 
@@ -56,7 +56,7 @@ h2.hndle .advads-hndlelinks a + a { margin-left: 1em; }
 #advads-ad-injection-box .advads-ad-injection-box-button-wrap button:hover { background: #0085ba !important; color: #fff; text-indent: 0; white-space: normal; cursor: pointer; }
 #advads-ad-injection-box input[type="number"] { width: 4.5em; }
 
-#advads-ad-injection-shortcode { width: 130px; border: none; background: #ededed; }
+.advads-ad-injection-shortcode { width: 100%; border: none; background: #ededed; }
 #advads-ad-injection-message-placement-created > p:first-child { font-size: 1.5em; }
 .advads-pro-link { opacity: 0.5; }
 .advads-pro-link:before { content: 'ADD-ON'; position: absolute; bottom: -4px; right: 2px; text-indent: 0; color: #000; text-shadow: none; font-weight: bold; font-size: .8em; }
@@ -297,9 +297,32 @@ tr:hover .on-hover { display: block; }
 #adsense-ad-param-error { color: red; font-weight: bold; }
 .advads-adsense-content { width: 100%; }
 .advads-adsense-show-code a, #mapi-open-selector a { padding: 0 10px; color: inherit; }
-#mapi-wrap { border: 1px solid #ddd; padding: .5rem; position: relative; margin: 1rem auto; display:none; overflow: hidden; }
+#mapi-wrap { border: 1px solid #ddd; padding: .5rem; position: relative; display:none; overflow: hidden; }
 #mapi-wrap .label { font-weight:bold; display:block; margin:.75em auto .25rem; }
 #mapi-quota-message{ color: #ef8e00; font-style: italic; font-weight: bold; }
+
+#mapi-loading-overlay { position:absolute; background-color:rgba(255,255,255,.75); top:0; right:0; bottom:0; left:0; text-align:center; z-index: 1; display:none; }
+#mapi-wrap { padding-top: 46px; }
+#mapi-wrap table, #mapi-wrap table tbody { width: 100%; }
+#mapi-wrap table { margin-bottom: 10px; }
+#mapi-wrap tbody .dashicons { font-size: 1.2em; cursor: pointer; }
+#mapi-wrap thead th { font-weight: 700; }
+#mapi-wrap tbody .dashicons.disabled { color: #939393; }
+#mapi-wrap tbody [data-mapiaction="getCode"] { color: #46b450; }
+#mapi-wrap tbody .disabled[data-mapiaction="getCode"] { color: #a7a7a7; cursor: default; }
+#mapi-wrap tbody [data-mapiaction="updateCode"] { color: #0085ba; }
+#mapi-wrap #mapi-update-unit-lists { font-size: 20px; padding: 13px; position: absolute; top: 0; right: 47px; }
+#mapi-wrap #mapi-list-header { font-weight: 700; display: inline-block; font-size: 13px; line-height: 1.5em; }
+#mapi-wrap #mapi-list-header span { display: inline-block; padding: 8px 9px; }
+#mapi-table-wrap { position: relative; }
+@media( min-width: 783px ) { #mapi-wrap { 	padding-top: 38px; } #mapi-wrap #mapi-update-unit-lists { 	padding: 9px; 	right: 39px; } }
+#mapi-table-wrap tr.selected { background-color: #dcdcfb; }
+#mapi-table-wrap tr.selected td { color: #0073aa; font-weight: bold; }
+#remote-ad-unsupported-ad-type { background-color: #f0f0f0; padding: 8px; border: 1px solid #d6d6d6; }
+#mapi-table-wrap .unsupported { text-decoration:line-through; color:#555 }
+#mapi-table-wrap .unsupported span { text-decoration:none;color:#555 }
+#mapi-table-wrap table { border-left:none; border-right: none; }
+#mapi-table-wrap { margin-left: -.5rem; margin-right: -.5rem; }
 /**
 - TABS + SETTINGS
 -*/
@@ -326,7 +349,7 @@ tr:hover .on-hover { display: block; }
 - PLUGIN LIST
 -*/
 #advanced-ads-feedback-overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
     height: 100%;
     width: 100%;
     position: fixed; /* Stay in place */
@@ -348,6 +371,7 @@ tr:hover .on-hover { display: block; }
     background-color: #fff;
     overflow-y: scroll;
 }
+#advanced-ads-feedback-overlay-close-button { position: absolute; top: 10px; right: 10px; cursor: pointer; }
 #advanced-ads-feedback-content textarea:not(.advanced_ads_disable_help_text),
 #advanced-ads-feedback-content input[type="text"] { display:none; }
 #advanced-ads-feedback-content textarea,

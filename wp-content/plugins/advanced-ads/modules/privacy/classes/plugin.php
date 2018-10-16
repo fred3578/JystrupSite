@@ -30,6 +30,9 @@ class Advanced_Ads_Privacy
 
 		add_filter( 'advanced-ads-can-display', array( $this, 'can_display_by_consent' ), 10, 3 );
 
+		if ( ! empty( $options['enabled'] ) ) {
+			add_filter( 'advanced-ads-activate-advanced-js', '__return_true' );
+		}
 	}
 
 	/**

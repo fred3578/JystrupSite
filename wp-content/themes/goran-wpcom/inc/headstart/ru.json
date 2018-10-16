@@ -1,0 +1,269 @@
+{
+    "settings": {
+        "options": {
+            "show_on_front": "page"
+        },
+        "theme_mods": {
+            "0": false,
+            "header_textcolor": "ffffff",
+            "background_color": "e1dfdf",
+            "background_image": "",
+            "background_repeat": "repeat",
+            "background_position_x": "left",
+            "background_attachment": "scroll",
+            "edin_sidebar_position": "right",
+            "edin_thumbnail_style": "landscape",
+            "edin_title_front_page": false,
+            "goran_top_area_content": "Edit this message in the <a href=\"https://wordpress.com/customize/\">Customizer (Theme Options)</a>",
+            "nav_menu_locations": {
+                "primary": "primary",
+                "footer": "primary"
+            },
+            "edin_featured_page_one_front_page": "_hs_about_page",
+            "edin_featured_page_two_front_page": "_hs_contact_page",
+            "edin_featured_page_three_front_page": "_hs_blog_page",
+            "colors_manager": {
+                "colors": {
+                    "bg": "#e1dfdf",
+                    "link": "#e74f4e",
+                    "fg1": "#b23d3c",
+                    "fg2": "#a13736"
+                }
+            },
+            "edin_breadcrumbs": true
+        },
+        "headstart": {
+            "mapped_id_options": [],
+            "mapped_id_theme_mods": [
+                "edin_featured_page_one_front_page",
+                "edin_featured_page_two_front_page",
+                "edin_featured_page_three_front_page"
+            ]
+        }
+    },
+    "widgets": [
+        {
+            "id": "search-2",
+            "id_base": "search",
+            "settings": {
+                "title": ""
+            },
+            "sidebar": "sidebar-1",
+            "position": 0
+        },
+        {
+            "id": "widget_contact_info-2",
+            "id_base": "widget_contact_info",
+            "settings": {
+                "title": "Наш адрес",
+                "address": "1-4 Langley Court\nLondon WC2E 9JY\nUnited Kingdom",
+                "phone": "+4 (420) 7430 2696",
+                "hours": "",
+                "lat": 51.5126373,
+                "lon": -0.1246993,
+                "showmap": 1
+            },
+            "sidebar": "sidebar-2",
+            "position": 0
+        },
+        {
+            "id": "text-3",
+            "id_base": "text",
+            "settings": {
+                "title": "Текстовый виджет",
+                "text": "Это текстовые виджеты. С помощью этого виджета можно добавлять текст или HTML-код на боковую панель. Используйте текстовый виджет для отображения текста, ссылок, изображений, HTML или их сочетаний. Чтобы изменить элемент, откройте раздел «Виджет» в <a href=\"https://wordpress.com/customize/\">Конфигураторе</a>.",
+                "filter": true,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-3",
+            "position": 0
+        },
+        {
+            "id": "nav_menu-2",
+            "id_base": "nav_menu",
+            "settings": {
+                "title": "Подписаться",
+                "nav_menu": "social"
+            },
+            "sidebar": "sidebar-4",
+            "position": 0
+        },
+        {
+            "id": "text-3",
+            "id_base": "text",
+            "settings": {
+                "title": "Текстовый виджет",
+                "text": "Это текстовые виджеты. С помощью этого виджета можно добавлять текст или HTML-код на боковую панель. Используйте текстовый виджет для отображения текста, ссылок, изображений, HTML или их сочетаний. Чтобы изменить элемент, откройте раздел «Виджет» в <a href=\"https://wordpress.com/customize/\">Конфигураторе</a>."
+            },
+            "sidebar": "sidebar-5",
+            "position": 0
+        },
+        {
+            "id": "text-4",
+            "id_base": "text",
+            "settings": {
+                "title": "Виджеты главной страницы",
+                "text": "Чтобы настроить эту область главной страницы, перейдите в <a href=\"https://wordpress.com/customize/\">Конфигуратор</a> и добавьте виджеты в соответствующие области на главной странице.",
+                "filter": true,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-6",
+            "position": 0
+        },
+        {
+            "id": "text-2",
+            "id_base": "text",
+            "settings": {
+                "title": "Шаблоны пользовательских страниц",
+                "text": "<p>У Горана есть четыре отличных шаблона пользовательских страниц для бизнес-сайтов и корпоративных веб-сайтов.</p>\n\n<ul>\n<li><a href=\"http://gorandemo.wordpress.com/\">Front Page Template</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/full-width-page/\">Full Width Page Template</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/grid-page/\">Grid Page Template</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/alternate-sidebar-page/\">Alternate Sidebar Page Template</a></li>\n</ul>",
+                "filter": false,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-7",
+            "position": 0
+        }
+    ],
+    "content": [
+        {
+            "post_title": "Главная",
+            "post_content": "Добро пожаловать на ваш новый сайт!  Чтобы внести изменения на этой странице, выберите элемент «Изменить».  Дополнительную информацию о настройке сайта см. на странице <a href=\"http://learn.wordpress.com/\">http://learn.wordpress.com/</a>.",
+            "post_excerpt": "Это цитата для главной страницы.",
+            "post_status": "publish",
+            "menu_order": 0,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_front_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 100,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-hero.jpg",
+            "page_template": "page-templates/front-page.php"
+        },
+        {
+            "post_title": "О нас",
+            "post_content": "Это пример страницы «О нас». Сведения о владельце сайта, контактные данные и прочую информацию, которая должна быть всегда и легко доступна, лучше размещать на отдельных страницах, а не в записях блога. Выберите элемент «Изменить», чтобы отредактировать эту страницу, или <a href=\"https://wordpress.com/page\">добавьте новую страницу</a>.",
+            "post_excerpt": "Это небольшая цитата для страницы «О нас», содержащей информацию&nbsp;о владельце сайта.",
+            "post_status": "publish",
+            "menu_order": 1,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_about_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 101,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-grid-page.jpg"
+        },
+        {
+            "post_title": "Контакты",
+            "post_content": "На этой странице представлены основная контактная информация и контактная форма. [contact-form][contact-field label=\"Имя\" type=\"name\" required=\"1\"/][contact-field label=\"Адрес эл. почты\" type=\"email\" required=\"1\"/][contact-field label=\"Веб-сайт\" type=\"url\"/][contact-field label=\"Комментарий\" type=\"textarea\" required=\"1\"/][/contact-form]",
+            "post_excerpt": "Это небольшая цитата для страницы&nbsp;«Контакты».",
+            "post_status": "publish",
+            "menu_order": 2,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_contact_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 102,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-full-width-page.jpg"
+        },
+        {
+            "post_title": "Блог",
+            "post_content": "Это страница, на которой будет располагаться блог вашего сайта.",
+            "post_excerpt": "Это небольшая цитата о вашем блоге.",
+            "post_status": "publish",
+            "menu_order": 3,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_blog_page",
+            "hs_sharing": 1,
+            "hs_old_id": 103,
+            "hs_like_status": 1,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2016/06/alternate-sidebar1.jpg"
+        },
+        {
+            "post_title": "Первая запись в блоге",
+            "post_content": "Это ваша самая первая запись. Выберите элемент «Изменить», чтобы отредактировать или удалить её, или <a href=\"https://wordpress.com/post\">создайте новую запись</a>. В этой записи можно рассказать читателям, почему вы завели блог и что планируете в нём публиковать.",
+            "post_excerpt": "Это цитата для вашей первой записи.",
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "post_type": "post",
+            "hs_custom_meta": "_hs_first_post",
+            "hs_sharing": 1,
+            "hs_like_status": 0,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-alternate-sidebar-page.jpg"
+        }
+    ],
+    "menus": {
+        "social": {
+            "name": "Социальные сети",
+            "items": [
+                {
+                    "menu-item-title": "Facebook",
+                    "menu-item-db-id": 111,
+                    "menu-item-object-id": "111",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 1,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://facebook.com"
+                },
+                {
+                    "menu-item-title": "Twitter",
+                    "menu-item-db-id": 112,
+                    "menu-item-object-id": "112",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 2,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://twitter.com"
+                },
+                {
+                    "menu-item-title": "Google Plus",
+                    "menu-item-db-id": 115,
+                    "menu-item-object-id": "115",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 3,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://plus.google.com"
+                },
+                {
+                    "menu-item-title": "Pinterest",
+                    "menu-item-db-id": 113,
+                    "menu-item-object-id": "113",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 4,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://pinterest.com"
+                },
+                {
+                    "menu-item-title": "Dribbble",
+                    "menu-item-db-id": 114,
+                    "menu-item-object-id": "114",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 5,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://dribbble.com"
+                }
+            ]
+        }
+    }
+}

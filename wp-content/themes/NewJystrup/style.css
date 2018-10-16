@@ -37,7 +37,15 @@ Text Domain: techguymedia
     min-height: 1000px !important; 
 }
 */
+/*
+#posts {
+    float: left;
+}
 
+#secondary {
+    float: left;
+}
+*/
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     color: #555;

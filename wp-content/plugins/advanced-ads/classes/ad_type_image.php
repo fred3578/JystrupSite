@@ -83,6 +83,12 @@ class Advanced_Ads_Ad_Type_Image extends Advanced_Ads_Ad_Type_Abstract{
 		
 		if ( $image ) {
 			list( $src, $width, $height ) = $image;
+			// override image sizes with the sizes given in ad options, but in frontend only
+			if( ! is_admin() || (  // is frontend
+				is_admin() && defined( 'DOING_AJAX' ) && DOING_AJAX ) ){ // is AJAX call (cache-busting)
+				$width  = isset( $ad->width ) ? absint( $ad->width ) : $width;
+				$height = isset( $ad->height ) ? absint( $ad->height ) : $height;
+			}
 			$hwstring = image_hwstring($width, $height);
 			$attachment = get_post($attachment_id);
 			$alt = trim(esc_textarea( get_post_meta($attachment_id, '_wp_attachment_image_alt', true) ));
@@ -169,6 +175,36 @@ class Advanced_Ads_Ad_Type_Image extends Advanced_Ads_Ad_Type_Abstract{
 		if( ! defined( 'AAT_VERSION' ) && $url ){ echo '</a>'; }
 
 		return ob_get_clean();
+	}
+	
+	/**
+	 * Generate a string with the original image size for output in the backend
+	 * Only show, if different from entered image sizes
+	 * 
+	 * @param   obj	$ad Advanced_Ads_Ad
+	 * @return  str	empty, if the entered size is the same as the original size
+	 */
+	public static function show_original_image_size( $ad ){
+
+		$attachment_id = ( isset( $ad->output['image_id'] ) ) ? absint( $ad->output['image_id'] ) : '';
+		
+		$image = wp_get_attachment_image_src( $attachment_id, 'full' );
+		
+		if ( $image ) {
+			list( $src, $width, $height ) = $image;
+			?><p class="description"><?php if( ( isset( $ad->width ) && $ad->width != $width ) 
+				|| ( isset( $ad->height ) && $ad->height != $height ) ) {
+			printf( 
+				/**
+				 * translators: $s is a size string like "728 x 90". 
+				 * This string shows up on the ad edit page of image ads if the size entered for the ad is different from the size of the uploaded image.
+				 */
+				esc_attr__( 'Original size: %s', 'advanced-ads' ), $width . '&nbsp;x&nbsp;' . $height ); ?></p><?php
+			}
+		}
+		
+		return '';
+		
 	}
 
 }

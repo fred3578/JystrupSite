@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php get_sidebar(); ?>
+
 
 <!-- Other Content here -->
 <div id="posts" class="card">
@@ -20,5 +20,11 @@
     <?php endif; ?>
 
 </div>
+
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+    <div id="secondary" class="widget-area" role="complementary">
+    <?php dynamic_sidebar( 'sidebar-1' ); ?>
+    </div>
+<?php endif; ?>
 
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@ class Advanced_Ads_Adblock_Finder {
 
 	public function print_adblock_check_js() {
 		$options = Advanced_Ads::get_instance()->options();
-		
+		if ( !empty( $options['ga-UID'] ) ) {
 		?><script>
 		var advanced_ads_ga_UID = <?php echo isset( $options['ga-UID'] ) ? "'" . esc_js( $options['ga-UID'] ). "'" : 'false' ?>;
 		var advanced_ads_ga_anonymIP = <?php 
@@ -24,9 +24,8 @@ class Advanced_Ads_Adblock_Finder {
 		} else {
 			readfile( dirname( __FILE__ ) . '/script.min.js' );
 		}
-		
-		?>
-		
-		</script><?php
+
+		?></script><?php
+		}
 	}
 }

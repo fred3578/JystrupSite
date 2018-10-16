@@ -38,6 +38,12 @@ $mapi_ad_codes['length'] = count( $mapi_ad_codes );
 		quota: <?php echo json_encode( $quota ) ?>,
 		pubId: '<?php echo $pub_id ?>',
 		adStatus: '<?php echo $ad->status ?>',
+		unsupportedUnits: <?php echo wp_json_encode( $mapi_options['unsupported_units'] ); ?>,
+		unsupportedLink: '<?php echo Advanced_Ads_AdSense_MAPI::UNSUPPORTED_TYPE_LINK; ?>',
+		unsupportedText: '<?php /**
+		     * translators: this is a label for an ad that we can currently not import from the AdSense account
+		 */
+		esc_html_e( 'unsupported', 'advanced-ads' ); ?>'
 	}; 
 </script>
 <?php endif; ?>
@@ -110,7 +116,7 @@ if( $pub_id_errors ) : ?>
 	    <option value="in-article" <?php selected( $unit_type, 'in-article' ); ?>><?php _e( 'InArticle', 'advanced-ads' ); ?></option>
 	    <option value="in-feed" <?php selected( $unit_type, 'in-feed' ); ?>><?php _e( 'InFeed', 'advanced-ads' ); ?></option>
 	</select>
-	<a href="<?php echo ADVADS_URL . 'manual/adsense-ads/#adsense-ad-types'; ?>" target="_blank"><?php _e( 'manual', 'advanced-ads' ); ?></a>
+	<a href="<?php echo ADVADS_URL . 'adsense-ads/#utm_source=advanced-ads&utm_medium=link&utm_campaign=adsense-ad-types'; ?>" target="_blank"><?php _e( 'manual', 'advanced-ads' ); ?></a>
     </div>
     <hr/>
     <label class="label" <?php if ( ! $is_responsive || 2 > count( $sizing_array ) ) { echo 'style="display: none;"'; } ?> id="resize-label"><?php _e( 'Resizing', 'advanced-ads' ); ?></label>

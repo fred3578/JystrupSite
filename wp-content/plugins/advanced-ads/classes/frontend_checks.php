@@ -123,7 +123,7 @@ class Advanced_Ads_Frontend_Checks {
 							'parent' => 'advanced_ads_ad_health',
 							'id'    => 'advanced_ads_ad_health_the_content_not_invoked',
 							'title' => sprintf( __( '<em>%s</em> filter does not exist', 'advanced-ads' ), 'the_content' ),
-							'href'  => 'https://wpadvancedads.com/manual/ads-not-showing-up/#frontend-issues-the-content-filter',
+							'href'  => ADVADS_URL . 'manual/ads-not-showing-up/#the_content-filter-missing',
 							'meta'   => array(
 								'class' => 'advanced_ads_ad_health_warning',
 								'target' => '_blank'
@@ -235,7 +235,7 @@ class Advanced_Ads_Frontend_Checks {
 				__( 'Your website is using HTTPS, but the ad code contains HTTP and might not work.', 'advanced-ads' ),
 				sprintf( __( 'Ad IDs: %s', 'advanced-ads'  ), '<i></i>' )
 			),
-			'href'  => 'https://wpadvancedads.com/manual/ad-health/#https-ads',
+			'href'  => 'https://wpadvancedads.com/manual/ad-health/?utm_source=advanced-ads&utm_medium=link&utm_campaign=adhealth-https-ads#https-ads',
 			'meta'   => array(
 				'class' => 'hidden advanced_ads_ad_health_warning advanced_ads_ad_health_has_http',
 				'target' => '_blank'
@@ -246,7 +246,7 @@ class Advanced_Ads_Frontend_Checks {
 			'parent' => 'advanced_ads_ad_health',
 			'id'    => 'advanced_ads_ad_health_incorrect_head',
 			'title' => sprintf( __( 'Visible ads should not use the Header placement: %s', 'advanced-ads'  ), '<i></i>' ),
-			'href'  => 'https://wpadvancedads.com/manual/ad-health/#header-ads',
+			'href'  => 'https://wpadvancedads.com/manual/ad-health/?utm_source=advanced-ads&utm_medium=link&utm_campaign=adhealth-visible-ad-in-header#header-ads',
 			'meta'   => array(
 				'class' => 'hidden advanced_ads_ad_health_warning advanced_ads_ad_health_incorrect_head',
 				'target' => '_blank'
@@ -263,13 +263,24 @@ class Advanced_Ads_Frontend_Checks {
 					__( 'Ad is hidden', 'advanced-ads' ),
 					sprintf( __( 'IDs: %s', 'advanced-ads'  ), '<i></i>' )
 				),
-				'href'  => 'https://wpadvancedads.com/manual/ad-health/#adsense-hidden&utm_source=advanced-ads&utm_medium=link&utm_campaign=frontend-adsense-hidden',
+				'href'  => 'https://wpadvancedads.com/manual/ad-health/?utm_source=advanced-ads&utm_medium=link&utm_campaign=adhealth-frontend-adsense-hidden#adsense-hidden',
 				'meta'   => array(
 					'class' => 'hidden advanced_ads_ad_health_warning advanced_ads_ad_health_hidden_adsense',
 					'target' => '_blank'
 				)
 			) );
 		}
+
+		$nodes[] = array( 'type' => 2, 'data' => array(
+			'parent' => 'advanced_ads_ad_health',
+			'id'    => 'advanced_ads_ad_health_floated_responsive_adsense',
+			'title' => sprintf( __( 'The following responsive AdSense ads are not showing up: %s', 'advanced-ads'  ), '<i></i>' ),
+			'href'	=> 'https://wpadvancedads.com/manual/ad-health/?utm_source=advanced-ads&utm_medium=link&utm_campaign=adhealth-adsense-responsive-not-showing#The_following_responsive_AdSense_ads_arenot_showing_up',
+			'meta'   => array(
+				'class' => 'hidden advanced_ads_ad_health_warning advanced_ads_ad_health_floated_responsive_adsense',
+				'target' => '_blank'
+			)
+		) );
 		
 		// warn if consent was not given
 		$privacy_state = Advanced_Ads_Privacy::get_instance()->get_state();
@@ -405,16 +416,69 @@ class Advanced_Ads_Frontend_Checks {
 					}
 				}
 			},
+
+			array_unique: function( array ) {
+				var r= [];
+				for ( var i = 0; i < array.length; i++ ) {
+					if ( r.indexOf( array[ i ] ) === -1 ) {
+						r.push( array[ i ] );
+					}
+				}
+				return r;
+			},
+
+			/**
+			 * Add item to Ad Health node.
+			 *
+			 * @param string selector Selector of the node.
+			 * @param string/array Item(s) to add.
+			 */
 			add_item_to_node: function( selector, item ) {
+				if ( typeof item === 'string' ) {
+					item = item.split();
+				}
 				var selector = document.querySelector( selector );
 				if ( selector ) {
 					selector.className = selector.className.replace( 'hidden', '' );
 					selector.innerHTML = selector.innerHTML.replace( /(<i>)(.*?)(<\/i>)/, function( match, p1, p2, p3 ) {
 						p2 = ( p2 ) ? p2.split( ', ' ) : [];
-						if ( p2.indexOf( item ) === -1 ) p2.push( item );
+						p2 = p2.concat( item );
+						p2 = advanced_ads_frontend_checks.array_unique( p2 );
 						return p1 + p2.join( ', ' ) + p3;
 					} );
 					advanced_ads_frontend_checks.showCount();
+				}
+			},
+
+			/**
+			 * Search for hidden AdSense.
+			 *
+			 * @param string context Context for search.
+			 */
+			advads_highlight_hidden_adsense: function( context ) {
+				if ( ! context ) {
+					 context = 'html'
+				}
+				if ( window.jQuery ) {
+					var advads_ad_health_check_adsense_hidden_ids = [];
+					var responsive_zero_width = [];
+					jQuery( 'ins.adsbygoogle', context ).each( function() {
+						// The parent container is invisible.
+						if( ! jQuery( this ).parent().is(':visible') ){
+						advads_ad_health_check_adsense_hidden_ids.push( this.dataset.adSlot );
+						}
+
+						// Zero width, perhaps because a parent container is floated
+						if ( jQuery( this ).attr( 'data-ad-format' ) && 0 === jQuery( this ).width() ) {
+							responsive_zero_width.push( this.dataset.adSlot );
+						}
+					});
+					if( advads_ad_health_check_adsense_hidden_ids.length ){
+						advanced_ads_frontend_checks.add_item_to_node( '.advanced_ads_ad_health_hidden_adsense', advads_ad_health_check_adsense_hidden_ids );
+					}
+					if ( responsive_zero_width.length ) {
+						advanced_ads_frontend_checks.add_item_to_node( '.advanced_ads_ad_health_floated_responsive_adsense', responsive_zero_width );
+					}
 				}
 			}
 		};
@@ -467,31 +531,9 @@ class Advanced_Ads_Frontend_Checks {
 				<?php if( ! isset( $adsense_options['violation-warnings-disable'] ) ) : ?>
 					// show warning if AdSense ad is hidden
 					setTimeout( function(){
-						advanced_ads_ready( advads_highlight_hidden_adsense );
+						advanced_ads_ready( advanced_ads_frontend_checks.advads_highlight_hidden_adsense );
 					}, 2000 );
-					function advads_highlight_hidden_adsense(){
-						if ( window.jQuery ) {
-							var advads_ad_health_check_adsense_hidden_ids = [];
-							jQuery('ins.adsbygoogle').each( function(){
-								if( ! jQuery( this ).parent().is(':visible') ){
-								advads_ad_health_check_adsense_hidden_ids.push( this.dataset.adSlot );
-								}
-							});
-							if( advads_ad_health_check_adsense_hidden_ids.length ){
-								var advads_has_hidden_adsense_link = document.querySelector( '.advanced_ads_ad_health_hidden_adsense' );
-								if ( advads_has_hidden_adsense_link ) {
-									advads_has_hidden_adsense_link.className = advads_has_hidden_adsense_link.className.replace( 'hidden', '' );
-									advads_has_hidden_adsense_link.innerHTML = advads_has_hidden_adsense_link.innerHTML.replace( /(<i>)(.*?)(<\/i>)/, function( match, p1, p2, p3 ) {
-										var ad_id = advads_ad_health_check_adsense_hidden_ids.join( ', ');
-										p2 = ( p2 ) ? p2.split( ', ' ) : [];
-										if ( p2.indexOf( ad_id ) === -1 ) p2.push( ad_id );
-										return p1 + p2.join( ', ' ) + p3;
-									} );
-									advanced_ads_frontend_checks.showCount();
-								}
-							}
-						}
-					};
+
 
 					// highlight AdSense Auto Ads ads 3 seconds after site loaded
 					setTimeout( function(){
@@ -581,8 +623,24 @@ class Advanced_Ads_Frontend_Checks {
 			$content .= Advanced_Ads_Utils::get_inline_asset( ob_get_clean() );
 		}
 
+		$adsense_options = Advanced_Ads_AdSense_Data::get_instance()->get_options();
+		if ( 'adsense' === $ad->type
+			&& ! empty( $ad->args['cache_busting_elementid'] )
+			&& ! isset( $adsense_options['violation-warnings-disable'] )
+		) {
+			ob_start(); ?>
+			<script>advanced_ads_ready( function() {
+				var ad_id = '<?php echo $ad->id; ?>';
+				var wrapper = '#<?php echo $ad->args['cache_busting_elementid']; ?>';
+				advanced_ads_frontend_checks.advads_highlight_hidden_adsense( wrapper );
+			});</script>
+			<?php
+			$content .= Advanced_Ads_Utils::get_inline_asset( ob_get_clean() );
+		}
+
 		return $content;
 	}
+
 
 	/**
 	 * Check if the 'Header Code' placement can be used to delived the ad.

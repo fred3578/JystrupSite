@@ -1,21 +1,17 @@
 <?php
 /**
- * Advanced Ads.
+ * Advanced Ads main admin class
  *
  * @package   Advanced_Ads_Admin
  * @author    Thomas Maier <thomas.maier@webgilde.com>
  * @license   GPL-2.0+
- * @link      http://webgilde.com
- * @copyright 2013-2018 Thomas Maier, webgilde GmbH
- */
-
-/**
+ * @link      https://wpadvancedads.com
+ * @copyright since 2013 Thomas Maier, webgilde GmbH
+ * 
  * Plugin class. This class should ideally be used to work with the
  * administrative side of the WordPress site.
- *
- * @package Advanced_Ads_Admin
- * @author  Thomas Maier <thomas.maier@webgilde.com>
  */
+
 class Advanced_Ads_Admin {
 
 	/**
@@ -217,12 +213,16 @@ class Advanced_Ads_Admin {
 			// just register this script for later inclusion on ad group list page.
 			wp_register_script( 'inline-edit-group-ads', plugins_url( 'assets/js/inline-edit-group-ads.js', __FILE__ ), array( 'jquery' ), ADVADS_VERSION, false );
 
+			$auto_ads_strings = Advanced_Ads_AdSense_Admin::get_auto_ads_messages();
+
 			// register admin.js translations.
 			$translation_array = array(
-				'condition_or'          => __( 'or', 'advanced-ads' ),
-				'condition_and'         => __( 'and', 'advanced-ads' ),
-				'after_paragraph_promt' => __( 'After which paragraph?', 'advanced-ads' ),
+				'condition_or'           => __( 'or', 'advanced-ads' ),
+				'condition_and'          => __( 'and', 'advanced-ads' ),
+				'after_paragraph_promt'  => __( 'After which paragraph?', 'advanced-ads' ),
+				'page_level_ads_enabled' => $auto_ads_strings['enabled'],
 			);
+
 			wp_localize_script( $this->plugin_slug . '-admin-script', 'advadstxt', $translation_array );
 
 			wp_enqueue_script( $this->plugin_slug . '-admin-script' );
@@ -459,6 +459,8 @@ class Advanced_Ads_Admin {
 		}
 
 		$subject = isset( $form['advanced_ads_disable_reason'] ) ? $form['advanced_ads_disable_reason'] : '(no reason given)';
+		// append plugin name to get a better subject.
+		$subject .= ' (Advanced Ads)';
 
 		$success = wp_mail( 'improve@wpadvancedads.com', $subject, $text, $headers );
 

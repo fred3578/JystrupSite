@@ -1,0 +1,269 @@
+{
+    "settings": {
+        "options": {
+            "show_on_front": "page"
+        },
+        "theme_mods": {
+            "0": false,
+            "header_textcolor": "ffffff",
+            "background_color": "e1dfdf",
+            "background_image": "",
+            "background_repeat": "repeat",
+            "background_position_x": "left",
+            "background_attachment": "scroll",
+            "edin_sidebar_position": "right",
+            "edin_thumbnail_style": "landscape",
+            "edin_title_front_page": false,
+            "goran_top_area_content": "Edit this message in the <a href=\"https://wordpress.com/customize/\">Customizer (Theme Options)</a>",
+            "nav_menu_locations": {
+                "primary": "primary",
+                "footer": "primary"
+            },
+            "edin_featured_page_one_front_page": "_hs_about_page",
+            "edin_featured_page_two_front_page": "_hs_contact_page",
+            "edin_featured_page_three_front_page": "_hs_blog_page",
+            "colors_manager": {
+                "colors": {
+                    "bg": "#e1dfdf",
+                    "link": "#e74f4e",
+                    "fg1": "#b23d3c",
+                    "fg2": "#a13736"
+                }
+            },
+            "edin_breadcrumbs": true
+        },
+        "headstart": {
+            "mapped_id_options": [],
+            "mapped_id_theme_mods": [
+                "edin_featured_page_one_front_page",
+                "edin_featured_page_two_front_page",
+                "edin_featured_page_three_front_page"
+            ]
+        }
+    },
+    "widgets": [
+        {
+            "id": "search-2",
+            "id_base": "search",
+            "settings": {
+                "title": ""
+            },
+            "sidebar": "sidebar-1",
+            "position": 0
+        },
+        {
+            "id": "widget_contact_info-2",
+            "id_base": "widget_contact_info",
+            "settings": {
+                "title": "我們的位置",
+                "address": "1-4 Langley Court\nLondon WC2E 9JY\n英國",
+                "phone": "0102030456789",
+                "hours": "",
+                "lat": 51.5126373,
+                "lon": -0.1246993,
+                "showmap": 1
+            },
+            "sidebar": "sidebar-2",
+            "position": 0
+        },
+        {
+            "id": "text-3",
+            "id_base": "text",
+            "settings": {
+                "title": "文字小工具",
+                "text": "這些是文字小工具。這是可用來在側邊欄新增文字或 HTML 的文字小工具。你可以利用文字小工具來顯示文字、連結、圖片、HTML 或上述多項元素。前往<a href=\"https://wordpress.com/customize/\">自訂工具</a>的「小工具」區段即可加以編輯。",
+                "filter": true,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-3",
+            "position": 0
+        },
+        {
+            "id": "nav_menu-2",
+            "id_base": "nav_menu",
+            "settings": {
+                "title": "關注我們",
+                "nav_menu": "social"
+            },
+            "sidebar": "sidebar-4",
+            "position": 0
+        },
+        {
+            "id": "text-3",
+            "id_base": "text",
+            "settings": {
+                "title": "文字小工具",
+                "text": "這些是文字小工具。這是可用來在側邊欄新增文字或 HTML 的文字小工具。你可以利用文字小工具來顯示文字、連結、圖片、HTML 或上述多項元素。前往<a href=\"https://wordpress.com/customize/\">自訂工具</a>的「小工具」區段即可加以編輯。"
+            },
+            "sidebar": "sidebar-5",
+            "position": 0
+        },
+        {
+            "id": "text-4",
+            "id_base": "text",
+            "settings": {
+                "title": "首頁小工具",
+                "text": "前往<a href=\"https://wordpress.com/customize/\">自訂工具</a>並在「首頁」小工具區域中新增小工具，即可設定首頁的此區域。",
+                "filter": true,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-6",
+            "position": 0
+        },
+        {
+            "id": "text-2",
+            "id_base": "text",
+            "settings": {
+                "title": "自訂頁面範本",
+                "text": "<p>Goran 提供 4 種適合企業和公司網站的自訂頁面範本：</p>\n\n<ul>\n<li><a href=\"http://gorandemo.wordpress.com/\">首頁範本</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/full-width-page/\">全寬頁面範本</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/grid-page/\">方格式頁面範本</a></li>\n<li><a href=\"http://gorandemo.wordpress.com/page-templates/alternate-sidebar-page/\">替用側邊欄頁面範本</a></li>\n</ul>",
+                "filter": false,
+                "syntaxhighlighter_encoded": true
+            },
+            "sidebar": "sidebar-7",
+            "position": 0
+        }
+    ],
+    "content": [
+        {
+            "post_title": "首頁",
+            "post_content": "歡迎來到你的全新網站！你可以按一下「編輯」連結修改這個頁面。如需自訂網站的更多資訊，請造訪 <a href=\"http://learn.wordpress.com/\">http://learn.wordpress.com/</a>",
+            "post_excerpt": "這是首頁的摘要",
+            "post_status": "publish",
+            "menu_order": 0,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_front_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 100,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-hero.jpg",
+            "page_template": "page-templates/front-page.php"
+        },
+        {
+            "post_title": "關於",
+            "post_content": "這是簡介頁面的範例。與文章不同的是，你希望能輕鬆存取的永久內容更適合放在頁面中，例如「簡介」或「聯絡資訊」。按一下「編輯」連結以變更此頁面或<a href=\"https://wordpress.com/page\">新增其他頁面</a>。",
+            "post_excerpt": "這只是簡介&nbsp;頁面的簡短摘要。",
+            "post_status": "publish",
+            "menu_order": 1,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_about_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 101,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-grid-page.jpg"
+        },
+        {
+            "post_title": "聯絡",
+            "post_content": "這是主要提供基本聯絡資訊和聯絡表單的聯絡頁面。[contact-form][contact-field label=\"姓名\" type=\"name\" required=\"1\"/][contact-field label=\"電子郵件\" type=\"email\" required=\"1\"/][contact-field label=\"網站\" type=\"url\"/][contact-field label=\"留言\" type=\"textarea\" required=\"1\"/][/contact-form]",
+            "post_excerpt": "這只是聯絡&nbsp;頁面的簡短摘要。",
+            "post_status": "publish",
+            "menu_order": 2,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_contact_page",
+            "hs_sharing": 1,
+            "hs_like_status": 1,
+            "hs_old_id": 102,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-full-width-page.jpg"
+        },
+        {
+            "post_title": "網誌",
+            "post_content": "使用者可在此網頁找到你的網誌",
+            "post_excerpt": "此範例只是「關於」頁面的部分節錄內容。",
+            "post_status": "publish",
+            "menu_order": 3,
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "post_type": "page",
+            "hs_custom_meta": "_hs_blog_page",
+            "hs_sharing": 1,
+            "hs_old_id": 103,
+            "hs_like_status": 1,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2016/06/alternate-sidebar1.jpg"
+        },
+        {
+            "post_title": "第一篇網誌文章",
+            "post_content": "這是你的首篇文章。按一下「編輯」連結以修改或刪除文章，或<a href=\"https://wordpress.com/post\">開始撰寫新文章</a>。你可以利用這篇文章告訴讀者建立此網誌的原因以及接下來的計畫。",
+            "post_excerpt": "這是你第一篇文章的文章摘要。",
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "post_type": "post",
+            "hs_custom_meta": "_hs_first_post",
+            "hs_sharing": 1,
+            "hs_like_status": 0,
+            "attachment_url": "https://gorandemo.files.wordpress.com/2014/08/goran-alternate-sidebar-page.jpg"
+        }
+    ],
+    "menus": {
+        "social": {
+            "name": "社群",
+            "items": [
+                {
+                    "menu-item-title": "Facebook",
+                    "menu-item-db-id": 111,
+                    "menu-item-object-id": "111",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 1,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://facebook.com"
+                },
+                {
+                    "menu-item-title": "Twitter",
+                    "menu-item-db-id": 112,
+                    "menu-item-object-id": "112",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 2,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://twitter.com"
+                },
+                {
+                    "menu-item-title": "Google Plus",
+                    "menu-item-db-id": 115,
+                    "menu-item-object-id": "115",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 3,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://plus.google.com"
+                },
+                {
+                    "menu-item-title": "Pinterest",
+                    "menu-item-db-id": 113,
+                    "menu-item-object-id": "113",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 4,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://pinterest.com"
+                },
+                {
+                    "menu-item-title": "Dribbble",
+                    "menu-item-db-id": 114,
+                    "menu-item-object-id": "114",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 5,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http://dribbble.com"
+                }
+            ]
+        }
+    }
+}
