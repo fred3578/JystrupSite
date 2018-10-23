@@ -27,6 +27,7 @@
 			$top_area_content = get_theme_mod( 'goran_top_area_content' );
 			if ( '' != $top_area_content ) :
 		?>
+
 		<div class="site-top-content">
 			<?php echo wp_kses_post( $top_area_content ); ?>
 		</div><!-- .site-top-content -->
@@ -51,5 +52,8 @@
 			</nav><!-- #site-navigation -->
 		<?php endif; ?>
 	</header><!-- #masthead -->
+	<?php 
+echo do_shortcode('[smartslider3 slider=2]');
+?>
 
 	<div id="content" class="site-content">
