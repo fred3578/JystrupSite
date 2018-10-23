@@ -45,6 +45,17 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.25 (2018-10-20)
+-------------------------
+- Updated with Gutenberg support
+	- Gutenberg editor styles
+	- Styling of Gutenberg blocks
+	- Custom Lovecraft Gutenberg palette
+	- Custom Lovecraft Gutenberg typography styles
+- Added option to disable Google Fonts with a translateable string
+- Updated theme description
+- Removed the languages sub folder, since that is handled by WordPress.org
+
 Version 1.24 (2018-05-24)
 -------------------------
 - Fixed output of cookie checkbox in comments
