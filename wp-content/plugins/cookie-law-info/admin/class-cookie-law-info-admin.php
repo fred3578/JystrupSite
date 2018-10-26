@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.8
+ * @since      1.6.6
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/admin
@@ -25,7 +25,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -53,7 +53,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -67,7 +67,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 */
 	public function enqueue_styles() {
 
@@ -90,7 +90,7 @@ class Cookie_Law_Info_Admin {
 	/**
 	 * Register the JavaScript for the admin area.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 */
 	public function enqueue_scripts() {
 
@@ -136,6 +136,7 @@ class Cookie_Law_Info_Admin {
 	 Hooked into admin_menu
 	 */
 	public function admin_menu() {
+		global $submenu;
 		add_submenu_page(
 			'edit.php?post_type='.CLI_POST_TYPE,
 			__('Cookie Law Settings','cookie-law-info'),
@@ -152,6 +153,21 @@ class Cookie_Law_Info_Admin {
 			'cookie-law-info-thirdparty',
 			array($this,'admin_non_necessary_cookie_page')
 		);
+		//rearrange settings menu
+		$out=array();
+		$back_up_settings_menu=array();
+		foreach ($submenu['edit.php?post_type='.CLI_POST_TYPE] as $key => $value) 
+		{
+			if($value[2]=='cookie-law-info')
+			{
+				$back_up_settings_menu=$value;
+			}else
+			{
+				$out[$key]=$value;
+			}
+		}
+		array_unshift($out,$back_up_settings_menu);
+		$submenu['edit.php?post_type='.CLI_POST_TYPE]=$out;
 	}
 
 	public function plugin_action_links( $links ) 
@@ -235,6 +251,10 @@ class Cookie_Law_Info_Admin {
 	    {
 	        // Check nonce:
 	        check_admin_referer('cookielawinfo-update-' . CLI_SETTINGS_FIELD);
+
+	        //module settings saving hook
+	        do_action('cli_module_save_settings');
+
 	        foreach($the_options as $key => $value) 
 	        {
 	            if(isset($_POST[$key . '_field'])) 

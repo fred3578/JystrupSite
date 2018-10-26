@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.8
+ * @since      1.6.6
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/public
@@ -25,7 +25,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * The ID of this plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
@@ -34,7 +34,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * The version of this plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
@@ -58,7 +58,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
@@ -74,7 +74,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 */
 	public function enqueue_styles() {
 
@@ -102,7 +102,7 @@ class Cookie_Law_Info_Public {
 	/**
 	 * Register the JavaScript for the public-facing side of the site.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 */
 	public function enqueue_scripts() {
 
@@ -313,11 +313,41 @@ class Cookie_Law_Info_Public {
 			//cache clear===========
 			if(isset($_GET['cli_action']))
 			{
+		        // Clear Litespeed cache
+				if(class_exists('LiteSpeed_Cache_API') && method_exists( 'LiteSpeed_Cache_API', 'purge_all' ))
+				{
+					LiteSpeed_Cache_API::purge_all();
+				}
+
+		        // WP Super Cache
+		        if(function_exists('wp_cache_clear_cache')) 
+		        {
+		          	wp_cache_clear_cache();
+		        }
+
 		        // W3 Total Cache
 		        if(function_exists('w3tc_flush_all')) 
 		        {
 		          	w3tc_flush_all();
-		        } 
+		        }
+
+		        // Site ground
+		        if(class_exists('SG_CachePress_Supercacher') && method_exists('SG_CachePress_Supercacher', 'purge_cache')) {
+		        	SG_CachePress_Supercacher::purge_cache(true);
+		        }
+
+		        // Endurance Cache
+		        if(class_exists('Endurance_Page_Cache') && method_exists('Endurance_Page_Cache','purge_all')) 
+		        {
+		          $e = new Endurance_Page_Cache;
+		          $e->purge_all();
+		        }
+
+		        // WP Fastest Cache
+		        if(isset($GLOBALS['wp_fastest_cache']) && method_exists($GLOBALS['wp_fastest_cache'],'deleteCache')) 
+		        {
+		          $GLOBALS['wp_fastest_cache']->deleteCache(true);
+		        }
 			}
 			//cache clear============
 		}
@@ -325,8 +355,37 @@ class Cookie_Law_Info_Public {
 	public function other_plugin_clear_cache()
 	{
 		$cli_flush_cache=2;
+		// Clear Litespeed cache
+		if(class_exists('LiteSpeed_Cache_API') && method_exists( 'LiteSpeed_Cache_API', 'purge_all' ))
+		{
+			$cli_flush_cache=1;
+		}
+
+        // WP Super Cache
+        if(function_exists('wp_cache_clear_cache')) 
+        {
+          	$cli_flush_cache=1;
+        }
+
         // W3 Total Cache
         if(function_exists('w3tc_flush_all')) 
+        {
+          	$cli_flush_cache=1;
+        }
+
+        // Site ground
+        if(class_exists('SG_CachePress_Supercacher') && method_exists('SG_CachePress_Supercacher', 'purge_cache')) {
+        	$cli_flush_cache=1;
+        }
+
+        // Endurance Cache
+        if(class_exists('Endurance_Page_Cache') && method_exists('Endurance_Page_Cache','purge_all')) 
+        {
+          $cli_flush_cache=1;
+        }
+
+        // WP Fastest Cache
+        if(isset($GLOBALS['wp_fastest_cache']) && method_exists($GLOBALS['wp_fastest_cache'],'deleteCache')) 
         {
           	$cli_flush_cache=1;
         }

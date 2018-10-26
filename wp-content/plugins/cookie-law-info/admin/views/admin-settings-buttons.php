@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 ?>
-<div class="cookie-law-info-tab-content" data-id="cookie-law-info-buttons">
+<div class="cookie-law-info-tab-content" data-id="<?php echo $target_id;?>">
     
     <ul class="cli_sub_tab">
         <li style="border-left:none; padding-left: 0px;" data-target="accept-button"><a><?php _e('Accept Button', 'cookie-law-info'); ?></a></li>
@@ -179,7 +179,7 @@ if ( ! defined( 'WPINC' ) ) {
                 <tr valign="top">
                     <th scope="row"><label for="button_2_as_button_field"><?php _e('Show as', 'cookie-law-info'); ?></label></th>
                     <td>
-                        <input type="radio" id="button_2_as_button_field_yes" name="button_2_as_button_field" class="styled cli_form_toggle" cli_frm_tgl-target="cli_readmore_type" value="true" <?php echo ( $the_options['button_2_as_button'] == true ) ? ' checked="checked" />' : ''; ?>  /> <?php _e('Button', 'cookie-law-info'); ?>
+                        <input type="radio" id="button_2_as_button_field_yes" name="button_2_as_button_field" class="styled cli_form_toggle" cli_frm_tgl-target="cli_readmore_type" value="true" <?php echo ( $the_options['button_2_as_button'] == true ) ? ' checked="checked"' : ''; ?>  /> <?php _e('Button', 'cookie-law-info'); ?>
                                
                         <input type="radio" id="button_2_as_button_field_no" name="button_2_as_button_field" class="styled cli_form_toggle" cli_frm_tgl-target="cli_readmore_type" value="false" <?php echo ( $the_options['button_2_as_button'] == false ) ? ' checked="checked"' : ''; ?> /> <?php _e('Link', 'cookie-law-info'); ?>
                     </td>
@@ -192,14 +192,60 @@ if ( ! defined( 'WPINC' ) ) {
                         ?>
                     </td>
                 </tr>
+                
                 <tr valign="top">
+                    <th scope="row"><label for="button_2_url_type_field"><?php _e('URL or Page?', 'cookie-law-info'); ?></label></th>
+                    <td>
+                        <input type="radio" id="button_2_url_type_field_url" name="button_2_url_type_field" class="styled cli_form_toggle" cli_frm_tgl-target="cli_readmore_url_type" value="url" <?php echo ( $the_options['button_2_url_type'] == 'url' ) ? ' checked="checked"' : ''; ?>  /> <?php _e('URL', 'cookie-law-info'); ?>
+                               
+                        <input type="radio" id="button_2_url_type_field_page" name="button_2_url_type_field" class="styled cli_form_toggle" cli_frm_tgl-target="cli_readmore_url_type" value="page" <?php echo ( $the_options['button_2_url_type'] == 'page' ) ? ' checked="checked"' : ''; ?> /> <?php _e('Page', 'cookie-law-info'); ?>
+                    </td>
+                </tr>
+
+                <tr valign="top" cli_frm_tgl-id="cli_readmore_url_type" cli_frm_tgl-val="url">
                     <th scope="row"><label for="button_2_url_field"><?php _e('URL', 'cookie-law-info'); ?></label></th>
                     <td>
                         <input type="text" name="button_2_url_field" id="button_2_url_field" value="<?php echo $the_options['button_2_url'] ?>" />
                     </td>
                 </tr>
+                <tr valign="top" cli_frm_tgl-id="cli_readmore_url_type" cli_frm_tgl-val="page">
+                    <th scope="row"><label for="button_2_page_field"><?php _e('Page', 'cookie-law-info'); ?></label></th>
+                    <td>
+                        <select name="button_2_page_field" class="vvv_combobox" id="button_2_page_field">
+                            <option value="0">--<?php _e('Select One','cookie-law-info'); ?>--</option>
+                            <?php
+                            foreach($all_pages as $page) 
+                            {
+                                ?>
+                                <option value="<?php echo $page->ID; ?>" <?php echo ($the_options['button_2_page']==$page->ID ? 'selected' : ''); ?>> <?php echo $page->post_title;?> </option>;
+                                <?php
+                            }
+                            ?>
+                        </select>
+                        <?php
+                        if($the_options['button_2_page']>0)
+                        {
+                            $privacy_policy_page=get_post($the_options['button_2_page']);
+                            $privacy_page_exists=0;
+                            if($privacy_policy_page instanceof WP_Post)
+                            {
+                                if($privacy_policy_page->post_status==='publish') 
+                                {
+                                    $privacy_page_exists=1;
+                                }  
+                            }
+                            if($privacy_page_exists==0)
+                            {
+                                ?>
+                                <span class="cli_form_er cli_privacy_page_not_exists_er" style="display: inline;"><?php echo _e('The currently selected page does not exist. Please select a new page.'); ?></span>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </td>
+                </tr>
                 <tr valign="top">
-                    <th scope="row"><label for="button_2_new_win_field"><?php _e('Open URL in new window?', 'cookie-law-info'); ?></label></th>
+                    <th scope="row"><label for="button_2_new_win_field"><?php _e('Open in new window?', 'cookie-law-info'); ?></label></th>
                     <td>
                         <input type="radio" id="button_2_new_win_field_yes" name="button_2_new_win_field" class="styled" value="true" <?php echo ( $the_options['button_2_new_win'] == true ) ? ' checked="checked"' : ''; ?> /> <?php _e('Yes', 'cookie-law-info'); ?>
                                <input type="radio" id="button_2_new_win_field_no" name="button_2_new_win_field" class="styled" value="false" <?php echo ( $the_options['button_2_new_win'] == false ) ? ' checked="checked"' : ''; ?> /> <?php _e('No', 'cookie-law-info'); ?>

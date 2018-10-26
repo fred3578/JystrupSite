@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 ?>
-<div class="cookie-law-info-tab-content" data-id="cookie-law-info-help">	        
+<div class="cookie-law-info-tab-content" data-id="<?php echo $target_id;?>">	        
 	<ul class="cli_sub_tab">
         <li style="border-left:none; padding-left: 0px;" data-target="shortcodes"><a><?php _e('Shortcodes', 'cookie-law-info'); ?></a></li>
         <li data-target="help-links"><a><?php _e('Help Links', 'cookie-law-info'); ?></a></li>
@@ -61,6 +61,11 @@ if ( ! defined( 'WPINC' ) ) {
                 <li>
                 	<div style="font-weight: bold;">[delete_cookies text="Click here to delete"]</div>
                 	<?php _e('Add any text you like- useful if you want e.g. another language to English.', 'cookie-law-info'); ?>
+                </li>
+                <li>
+                    <div style="font-weight: bold;">[cookie_after_accept] Your content goes here... [/cookie_after_accept]</div>
+                    <?php _e('Add content after accepting the cookie notice.', 'cookie-law-info'); ?>
+                    You can use `do_shortcode` function to add shortcodes inside the template file.
                 </li>
                 </ul>
         </div>

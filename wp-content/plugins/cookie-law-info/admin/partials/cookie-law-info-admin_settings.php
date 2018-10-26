@@ -7,6 +7,19 @@ $cli_admin_view_path=plugin_dir_path(CLI_PLUGIN_FILENAME).'admin/views/';
 $cli_img_path=CLI_PLUGIN_URL . 'images/';
 $plugin_name = 'wtgdprcookieconsent';
 $cli_activation_status=get_option($plugin_name.'_activation_status');
+
+//taking pages for privacy policy URL.
+$args_for_get_pages=array(
+    'sort_order'    => 'ASC',
+    'sort_column'   => 'post_title',
+    'hierarchical'  => 0,
+    'child_of'      => 0,
+    'parent'        => -1,
+    'offset'        => 0,
+    'post_type'     => 'page',
+    'post_status'   => 'publish'
+);
+$all_pages=get_pages($args_for_get_pages);
 ?>
 <script type="text/javascript">
     var cli_settings_success_message='<?php echo __('Settings updated.', 'cookie-law-info');?>';
@@ -39,13 +52,29 @@ $cli_activation_status=get_option($plugin_name.'_activation_status');
 
     <div class="cli_settings_left">
         <div class="nav-tab-wrapper wp-clearfix cookie-law-info-tab-head">
-            <a class="nav-tab" href="#cookie-law-info-general"><?php _e('General', 'cookie-law-info'); ?></a>
-            <a class="nav-tab" href="#cookie-law-info-message-bar"><?php _e('Customise Cookie Bar', 'cookie-law-info'); ?></a>
-            <a class="nav-tab" href="#cookie-law-info-buttons"><?php _e('Customise Buttons', 'cookie-law-info'); ?></a>
-            <a class="nav-tab" href="#cookie-law-info-advanced"><?php _e('Advanced', 'cookie-law-info'); ?></a>
-            <a class="nav-tab" href="#cookie-law-info-help"><?php _e('Help Guide', 'cookie-law-info'); ?></a>
+            <?php
+            $tab_head_arr=array(
+                'cookie-law-info-general'=>'General',
+                'cookie-law-info-message-bar'=>'Customise Cookie Bar',
+                'cookie-law-info-buttons'=>'Customise Buttons',
+                'cookie-law-info-advanced'=>'Advanced',
+                'cookie-law-info-help'=>'Help Guide'
+            );
+            Cookie_Law_Info::generate_settings_tabhead($tab_head_arr);
+            ?>
         </div>
         <div class="cookie-law-info-tab-container">
+            <?php
+            $setting_views_a=array(
+                'cookie-law-info-general'=>'admin-settings-general.php',
+                'cookie-law-info-message-bar'=>'admin-settings-messagebar.php',
+                'cookie-law-info-buttons'=>'admin-settings-buttons.php',                      
+                'cookie-law-info-advanced'=>'admin-settings-advanced.php',         
+            );
+            $setting_views_b=array(           
+                'cookie-law-info-help'=>'admin-settings-help.php',           
+            );
+            ?>
             <form method="post" action="<?php echo esc_url($_SERVER["REQUEST_URI"]);?>" id="cli_settings_form">
                 <input type="hidden" name="cli_update_action" value="" id="cli_update_action" />
                 <?php
@@ -54,16 +83,7 @@ $cli_activation_status=get_option($plugin_name.'_activation_status');
                 {
                     wp_nonce_field('cookielawinfo-update-' . CLI_SETTINGS_FIELD);
                 }
-                $setting_views_a=array(
-                    'admin-settings-general.php',
-                    'admin-settings-messagebar.php',
-                    'admin-settings-buttons.php',                      
-                    'admin-settings-advanced.php',          
-                );
-                $setting_views_b=array(           
-                    'admin-settings-help.php',           
-                );
-                foreach ($setting_views_a as $value) 
+                foreach ($setting_views_a as $target_id=>$value) 
                 {
                     $settings_view=$cli_admin_view_path.$value;
                     if(file_exists($settings_view))
@@ -71,10 +91,13 @@ $cli_activation_status=get_option($plugin_name.'_activation_status');
                         include $settings_view;
                     }
                 }
-                ?>            
+                ?> 
+                <?php 
+                //settings form fields for module
+                do_action('cli_module_settings_form');?>            
             </form>
             <?php
-            foreach ($setting_views_b as $value) 
+            foreach ($setting_views_b as $target_id=>$value) 
             {
                 $settings_view=$cli_admin_view_path.$value;
                 if(file_exists($settings_view))
@@ -83,6 +106,7 @@ $cli_activation_status=get_option($plugin_name.'_activation_status');
                 }
             }
             ?>
+            <?php do_action('cli_module_out_settings_form');?>
         </div>
     </div>
     <div class="cli_settings_right">

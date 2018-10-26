@@ -1,10 +1,10 @@
 === GDPR Cookie Consent ===
-Contributors: webtoffee,markwt
+Contributors: webtoffee, markwt
 Donate link: https://www.webtoffee.com/plugins/ 
 Tags: eu cookie law, GDPR, cookie law, cookie consent, eu privacy directive, privacy directive, cookies, privacy, compliance
 Requires at least: 3.3.1
 Tested up to: 4.9.8
-Stable tag: 1.6.8
+Stable tag: 1.6.9
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -174,6 +174,12 @@ See http://cookielawinfo.com for more information on what is required.
 == Changelog ==
 
 
+= 1.6.9 =
+
+* New enclosing shortcode added for better control of third party content. [cookie_after_accept]..content goes here..[/cookie_after_accept]
+* Basic support included for Litespeed cache, WP Super Cache, Site ground cache, Endurance Cache, WP Fastest Cache.
+* Option to choose from the built-in pages for 'Read More' link.
+
 = 1.6.8 =
 
 * Corrected German translations (thanks to Max B)
@@ -325,7 +331,7 @@ See http://cookielawinfo.com for more information on what is required.
 
 == Upgrade Notice ==
 
-= 1.6.8 =
-* Corrected German translations (thanks to Max B)
-* Bug in 'Show cookie bar on selected pages' Filter fixed
-* W3TC page cache compatibility added
+= 1.6.9 =
+* New enclosing shortcode added for better control of third party content. [cookie_after_accept]..content goes here..[/cookie_after_accept]
+* Basic support included for Litespeed cache, WP Super Cache, Site ground cache, Endurance Cache, WP Fastest Cache
+* Option to choose from the built-in pages for 'Read More' link.

@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.8
+ * @since      1.6.6
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.6.8
+ * @since      1.6.6
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
  * @author     WebToffee <info@webtoffee.com>
@@ -33,7 +33,7 @@ class Cookie_Law_Info {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   protected
 	 * @var      Cookie_Law_Info_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class Cookie_Law_Info {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class Cookie_Law_Info {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -66,7 +66,7 @@ class Cookie_Law_Info {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 */
 	public function __construct() 
 	{
@@ -76,7 +76,7 @@ class Cookie_Law_Info {
 		} 
 		else 
 		{
-			$this->version = '1.6.8';
+			$this->version = '1.6.9';
 		}
 		$this->plugin_name = 'cookie-law-info';
 
@@ -100,7 +100,7 @@ class Cookie_Law_Info {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -138,7 +138,7 @@ class Cookie_Law_Info {
 	 * Uses the Cookie_Law_Info_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -153,7 +153,7 @@ class Cookie_Law_Info {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -161,7 +161,7 @@ class Cookie_Law_Info {
 		$plugin_admin = new Cookie_Law_Info_Admin( $this->get_plugin_name(), $this->get_version(),$this);
 
 		
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu'); /* Adding admin menu */		
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'admin_menu',11); /* Adding admin menu */		
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'add_meta_box'); /* Adding custom meta box */
 		$this->loader->add_action( 'save_post', $plugin_admin, 'save_custom_metaboxes');/* Saving meta box data */
 		$this->loader->add_action( 'manage_edit-cookielawinfo_columns', $plugin_admin, 'manage_edit_columns'); /* Customizing listing column */
@@ -187,7 +187,7 @@ class Cookie_Law_Info {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 * @access   private
 	 */
 	private function define_public_hooks() 
@@ -211,7 +211,7 @@ class Cookie_Law_Info {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 */
 	public function run() {
 		$this->loader->run();
@@ -221,7 +221,7 @@ class Cookie_Law_Info {
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
 	 *
-	 * @since     1.6.8
+	 * @since     1.6.6
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
@@ -231,7 +231,7 @@ class Cookie_Law_Info {
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
-	 * @since     1.6.8
+	 * @since     1.6.6
 	 * @return    Cookie_Law_Info_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
@@ -241,7 +241,7 @@ class Cookie_Law_Info {
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
-	 * @since     1.6.8
+	 * @since     1.6.6
 	 * @return    string    The version number of the plugin.
 	 */
 	public function get_version() {
@@ -266,6 +266,61 @@ class Cookie_Law_Info {
 		}
 		update_option( CLI_SETTINGS_FIELD, $settings );
 		return $settings;
+	}
+
+	/**
+	 * Generate tab head for settings page.
+	 * method will translate the string to current language
+	 */
+	public static function generate_settings_tabhead($title_arr)
+	{		
+		$out_arr=array();
+		foreach($title_arr as $k=>$v)
+		{
+			if($k=='cookie-law-info-buttons')
+			{
+				$out_arr[$k]=$v;
+				//tab head for modules
+				$out_arr=apply_filters('cli_module_settings_tabhead',$out_arr);
+			}else
+			{
+				$out_arr[$k]=$v;
+			}
+		}		
+		foreach($out_arr as $k=>$v)
+		{			
+			if(is_array($v))
+			{
+				$v=(isset($v[2]) ? $v[2] : '').__($v[0], 'cookie-law-info').' '.(isset($v[1]) ? $v[1] : '');
+			}else
+			{
+				$v=__($v, 'cookie-law-info');
+			}
+		?>
+			<a class="nav-tab" href="#<?php echo $k;?>"><?php echo $v; ?></a>
+		<?php
+		}
+	}
+
+	/**
+	 * Envelope settings tab content with tab div.
+	 * relative path is not acceptable in view file
+	 */
+	public static function envelope_settings_tabcontent($target_id,$view_file="",$html="")
+	{
+	?>
+		<div class="cookie-law-info-tab-content" data-id="<?php echo $target_id;?>">
+			<?php
+			if($view_file!="" && file_exists($view_file))
+			{
+				include_once $view_file;
+			}else
+			{
+				echo $html;
+			}
+			?>
+		</div>
+	<?php
 	}
 
 	/**
@@ -298,6 +353,8 @@ class Cookie_Law_Info {
 			'button_2_as_button'			=> false,
 			'button_2_button_colour' 		=> '#333',
 			'button_2_button_size' 			=> 'medium',
+			'button_2_url_type'				=>'url',
+			'button_2_page'					=>get_option('wp_page_for_privacy_policy') ? get_option('wp_page_for_privacy_policy') : 0,
 	            
 	        'button_3_text'					=> 'Reject',
 			'button_3_url' 					=> '#',
@@ -334,7 +391,7 @@ class Cookie_Law_Info {
 	        'reject_close_reload'           => false,
 			'showagain_background' 			=> '#fff',
 			'showagain_border' 				=> '#000',
-			'showagain_text'	 			=> addslashes ('Privacy & Cookies Policy'),
+			'showagain_text'	 			=> addslashes('Privacy & Cookies Policy'),
 			'showagain_div_id' 				=> '#cookie-law-info-again',
 			'showagain_tab' 				=> true,
 			'showagain_x_position' 			=> '100px',
@@ -410,7 +467,7 @@ class Cookie_Law_Info {
 	    'logging_on'=>$settings['logging_on'],
 	    'as_popup'=>$settings['as_popup'],
 	    'popup_overlay'=>$settings['popup_overlay'],
-	    'bar_heading_text'=>$settings['bar_heading_text'], 
+	    'bar_heading_text'=>$settings['bar_heading_text'],
 	  );
 	  $str = json_encode( $slim_settings );
 	  /*
