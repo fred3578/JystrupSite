@@ -22,8 +22,6 @@ if ( ! defined( 'WPINC' ) ) {
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 */
-
-
 class Cookie_Law_Info_Shortcode {
 
     public $version;
@@ -48,7 +46,28 @@ class Cookie_Law_Info_Shortcode {
         add_shortcode( 'cookie_reject',array($this,'cookielawinfo_shortcode_reject_button'));      // a shortcode [cookie_reject (colour="red")]
         add_shortcode( 'cookie_link',array($this,'cookielawinfo_shortcode_more_link'));            // a shortcode [cookie_link]
         add_shortcode( 'cookie_button',array($this,'cookielawinfo_shortcode_main_button'));        // a shortcode [cookie_button]
+        add_shortcode('cookie_after_accept',array($this,'cookie_after_accept_shortcode'));
 	}
+
+    /*
+    *   Add content after accepting the cookie notice.
+    *   Usage : 
+                Inside post editor
+                [cookie_after_accept] ...Your content goes here...  [/cookie_after_accept]
+                Inside template
+                <?php echo do_shortcode('...shortcode goes here...'); ?>
+    */
+    public function cookie_after_accept_shortcode($atts=array(),$content='')
+    {
+        if(isset($_COOKIE["viewed_cookie_policy"]) && $_COOKIE["viewed_cookie_policy"] == 'yes')
+        {
+            return $content;
+        }else
+        {
+            return '';
+        }
+    }
+
 
     /**
      A shortcode that outputs a link which will delete the cookie used to track
@@ -259,7 +278,6 @@ class Cookie_Law_Info_Shortcode {
         elseif ( $name == "button_2" ) {
             $settings = array(
                 'button_x_text' => stripslashes( $arr['button_2_text'] ),
-                'button_x_url' => $arr['button_2_url'],
                 'button_x_action' => $arr['button_2_action'],
                 
                 'button_x_link_colour' => $arr['button_2_link_colour'],
@@ -268,6 +286,29 @@ class Cookie_Law_Info_Shortcode {
                 'button_x_button_colour' => $arr['button_2_button_colour'],
                 'button_x_button_size' => $arr['button_2_button_size']
             );
+            if($arr['button_2_url_type']=='url')
+            {
+                $settings['button_x_url']=$arr['button_2_url'];
+            }else
+            {
+                $privacy_page_exists=0;
+                if($arr['button_2_page']>0) //page choosed
+                {
+                    $privacy_policy_page=get_post($arr['button_2_page']);                    
+                    if($privacy_policy_page instanceof WP_Post)
+                    {
+                        if($privacy_policy_page->post_status==='publish') 
+                        {
+                            $privacy_page_exists=1;
+                            $settings['button_x_url']=get_page_link($privacy_policy_page);
+                        }  
+                    }
+                }
+                if($privacy_page_exists==0)
+                {
+                    return '';   
+                }
+            }
             $class_name = 'cli-plugin-main-link';
         }
         

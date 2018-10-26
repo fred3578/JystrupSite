@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 ?>
-<div class="cookie-law-info-tab-content" data-id="cookie-law-info-general">
+<div class="cookie-law-info-tab-content" data-id="<?php echo $target_id;?>">
 	<ul class="cli_sub_tab">
 		<li style="border-left:none; padding-left: 0px;" data-target="cookie-bar"><a><?php _e('Cookie Bar','cookie-law-info');?></a></li>
 		<li data-target="show-again"><a><?php _e('Show Again Tab','cookie-law-info');?></a></li>

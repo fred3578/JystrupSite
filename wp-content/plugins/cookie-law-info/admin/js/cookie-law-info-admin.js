@@ -210,6 +210,13 @@
 				}).show().find('th label').css({'margin-left':'0px'}).animate({'margin-left':'15px'});
 			}
 		}
+		$('#button_2_page_field').on('change',function(){
+			if($('.cli_privacy_page_not_exists_er').length>0)
+			{
+				$('.cli_privacy_page_not_exists_er').remove();
+			}
+		});
+
 		var cli_notify_msg=
 		{
 			error:function(message)

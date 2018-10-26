@@ -4,7 +4,7 @@ if ( ! defined( 'WPINC' ) ) {
     die;
 }
 ?>
-<div class="cookie-law-info-tab-content" data-id="cookie-law-info-advanced">
+<div class="cookie-law-info-tab-content" data-id="<?php echo $target_id;?>">
     <h3>Advanced</h3>
     <p><?php _e('Sometimes themes apply settings that clash with plugins. If that happens, try adjusting these settings.', 'cookie-law-info'); ?></p>
 

@@ -4,7 +4,7 @@
  * Fired during plugin activation
  *
  * @link       http://cookielawinfo.com/
- * @since      1.6.8
+ * @since      1.6.6
  *
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      1.6.8
+ * @since      1.6.6
  * @package    Cookie_Law_Info
  * @subpackage Cookie_Law_Info/includes
  * @author     WebToffee <info@webtoffee.com>
@@ -27,7 +27,7 @@ class Cookie_Law_Info_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.6.8
+	 * @since    1.6.6
 	 */
 	public static function activate() 
 	{

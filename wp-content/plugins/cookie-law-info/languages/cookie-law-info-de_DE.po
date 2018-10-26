@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-10-08 14:20+0530\n"
-"PO-Revision-Date: 2018-10-08 14:56+0530\n"
+"POT-Creation-Date: 2018-10-25 11:52+0530\n"
+"PO-Revision-Date: 2018-10-25 11:52+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -15,83 +15,63 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: admin/class-cookie-law-info-admin.php:141
 #: admin/class-cookie-law-info-admin.php:142
-#: admin/partials/cookie-law-info-admin_settings.php:18
+#: admin/class-cookie-law-info-admin.php:143
+#: admin/partials/cookie-law-info-admin_settings.php:31
 msgid "Cookie Law Settings"
 msgstr "Cookie-Law-Einstellungen"
 
-#: admin/class-cookie-law-info-admin.php:149
 #: admin/class-cookie-law-info-admin.php:150
+#: admin/class-cookie-law-info-admin.php:151
 msgid "Non-necessary Cookie"
 msgstr "Nicht erforderlicher Cookie"
 
-#: admin/class-cookie-law-info-admin.php:159
+#: admin/class-cookie-law-info-admin.php:175
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: admin/class-cookie-law-info-admin.php:160
+#: admin/class-cookie-law-info-admin.php:176
 msgid "Support"
 msgstr "Unterstützung"
 
-#: admin/class-cookie-law-info-admin.php:200
-#: admin/class-cookie-law-info-admin.php:247
+#: admin/class-cookie-law-info-admin.php:216
+#: admin/class-cookie-law-info-admin.php:267
 msgid "Settings Updated."
 msgstr "Einstellungen aktualisiert."
 
-#: admin/class-cookie-law-info-admin.php:228
+#: admin/class-cookie-law-info-admin.php:244
 msgid "You do not have sufficient permission to perform this operation"
 msgstr "Sie haben nicht die Berechtigung diese Aktion durchzuführen"
 
-#: admin/class-cookie-law-info-admin.php:262
+#: admin/class-cookie-law-info-admin.php:282
 msgid "ERROR MIGRATING SETTINGS (ERROR: 2)"
 msgstr "FEHLER BEIM MIGRIEREN DER EINSTELLUNGEN (FEHLER: 2)"
 
-#: admin/partials/cookie-law-info-admin_settings.php:12
+#: admin/partials/cookie-law-info-admin_settings.php:25
 #: admin/views/admin_non_necessary_cookie.php:14
 msgid "Settings updated."
 msgstr "Einstellungen aktualisiert."
 
-#: admin/partials/cookie-law-info-admin_settings.php:13
+#: admin/partials/cookie-law-info-admin_settings.php:26
 #: admin/views/admin_non_necessary_cookie.php:15
 msgid "Unable to update Settings."
 msgstr "Aktualisieren"
 
-#: admin/partials/cookie-law-info-admin_settings.php:14
+#: admin/partials/cookie-law-info-admin_settings.php:27
 msgid "Settings reset to defaults."
 msgstr "Die Einstellungen wurden auf die Standardwerte zurückgesetzt."
 
-#: admin/partials/cookie-law-info-admin_settings.php:15
+#: admin/partials/cookie-law-info-admin_settings.php:28
 msgid "Unable to reset settings."
 msgstr "Die Einstellungen konnten nicht zurückgesetzt werden."
 
-#: admin/partials/cookie-law-info-admin_settings.php:26
+#: admin/partials/cookie-law-info-admin_settings.php:39
 msgid "Your Cookie Law Info bar is switched on"
 msgstr "Ihr Cookie Gesetz Info-Leiste ist eingeschaltet"
 
-#: admin/partials/cookie-law-info-admin_settings.php:34
+#: admin/partials/cookie-law-info-admin_settings.php:47
 msgid "Your Cookie Law Info bar is switched off"
 msgstr "Ihre Cookie Law Infoleiste ist eingeschaltet"
-
-#: admin/partials/cookie-law-info-admin_settings.php:42
-msgid "General"
-msgstr "Allgemeines"
-
-#: admin/partials/cookie-law-info-admin_settings.php:43
-msgid "Customise Cookie Bar"
-msgstr "Cookie-Leiste anpassen"
-
-#: admin/partials/cookie-law-info-admin_settings.php:44
-msgid "Customise Buttons"
-msgstr "Anpassen der Schaltflächen"
-
-#: admin/partials/cookie-law-info-admin_settings.php:45
-msgid "Advanced"
-msgstr "Erweitert"
-
-#: admin/partials/cookie-law-info-admin_settings.php:46
-msgid "Help Guide"
-msgstr "Leitfaden"
 
 #: admin/views/admin-settings-advanced.php:9
 msgid ""
@@ -188,7 +168,8 @@ msgstr "Aktion"
 
 #: admin/views/admin-settings-buttons.php:61
 #: admin/views/admin-settings-buttons.php:136
-#: admin/views/admin-settings-buttons.php:196
+#: admin/views/admin-settings-buttons.php:199
+#: admin/views/admin-settings-buttons.php:206
 msgid "URL"
 msgstr "Externe URL"
 
@@ -201,13 +182,12 @@ msgstr ""
 
 #: admin/views/admin-settings-buttons.php:69
 #: admin/views/admin-settings-buttons.php:144
-#: admin/views/admin-settings-buttons.php:202
 msgid "Open URL in new window?"
 msgstr "URL in neuem Fenster öffnen?"
 
 #: admin/views/admin-settings-buttons.php:71
 #: admin/views/admin-settings-buttons.php:146
-#: admin/views/admin-settings-buttons.php:204
+#: admin/views/admin-settings-buttons.php:250
 #: admin/views/admin-settings-general.php:45
 #: admin/views/admin-settings-general.php:55
 #: admin/views/admin-settings-general.php:63
@@ -223,7 +203,7 @@ msgstr "Ja"
 
 #: admin/views/admin-settings-buttons.php:73
 #: admin/views/admin-settings-buttons.php:147
-#: admin/views/admin-settings-buttons.php:205
+#: admin/views/admin-settings-buttons.php:251
 #: admin/views/admin-settings-general.php:46
 #: admin/views/admin-settings-general.php:56
 #: admin/views/admin-settings-general.php:64
@@ -239,7 +219,7 @@ msgstr "Nein"
 
 #: admin/views/admin-settings-buttons.php:80
 #: admin/views/admin-settings-buttons.php:151
-#: admin/views/admin-settings-buttons.php:209
+#: admin/views/admin-settings-buttons.php:255
 msgid "Size"
 msgstr "Größe"
 
@@ -251,6 +231,27 @@ msgstr ""
 "Diese Schaltfläche/dieser Link kann verwendet werden, um einen Link zu Ihrer "
 "Datenschutz- und Cookie-Richtlinie bereitzustellen. Sie können die "
 "Schaltfläche beliebig anpassen."
+
+#: admin/views/admin-settings-buttons.php:197
+msgid "URL or Page?"
+msgstr ""
+
+#: admin/views/admin-settings-buttons.php:201
+#: admin/views/admin-settings-buttons.php:212
+msgid "Page"
+msgstr ""
+
+#: admin/views/admin-settings-buttons.php:215
+msgid "Select One"
+msgstr ""
+
+#: admin/views/admin-settings-buttons.php:240
+msgid "The currently selected page does not exist. Please select a new page."
+msgstr ""
+
+#: admin/views/admin-settings-buttons.php:248
+msgid "Open in new window?"
+msgstr ""
 
 #: admin/views/admin-settings-general.php:9
 #: admin/views/admin-settings-general.php:15
@@ -439,7 +440,7 @@ msgid "Shortcodes"
 msgstr "Shortcodes"
 
 #: admin/views/admin-settings-help.php:10
-#: admin/views/admin-settings-help.php:71
+#: admin/views/admin-settings-help.php:76
 msgid "Help Links"
 msgstr "Hilfe-Links"
 
@@ -540,24 +541,28 @@ msgstr ""
 "Fügen Sie beliebigen Text ein (hilfreich z. B., wenn Sie außer Englisch eine "
 "weitere Sprache nutzen möchten)"
 
-#: admin/views/admin-settings-help.php:75
-#: admin/views/admin-settings-help.php:78 admin/views/goto-pro.php:93
+#: admin/views/admin-settings-help.php:67
+msgid "Add content after accepting the cookie notice."
+msgstr ""
+
+#: admin/views/admin-settings-help.php:80
+#: admin/views/admin-settings-help.php:83 admin/views/goto-pro.php:93
 msgid "Documentation"
 msgstr "Dokumentation"
 
-#: admin/views/admin-settings-help.php:76
+#: admin/views/admin-settings-help.php:81
 msgid "Refer to our documentation to set and get started"
 msgstr "Werfen Sie einen Blick in unsere Dokumentation für erste Schritte"
 
-#: admin/views/admin-settings-help.php:83
+#: admin/views/admin-settings-help.php:88
 msgid "Help and Support"
 msgstr "Hilfe und Support"
 
-#: admin/views/admin-settings-help.php:84
+#: admin/views/admin-settings-help.php:89
 msgid "We would love to help you on any queries or issues."
 msgstr "Wir helfen Ihnen gerne bei Fragen oder Problemen."
 
-#: admin/views/admin-settings-help.php:86
+#: admin/views/admin-settings-help.php:91
 msgid "Contact Us"
 msgstr "Kontaktieren Sie uns"
 
@@ -750,11 +755,9 @@ msgstr "Scannen und Import/Export von Cookies auf der Startseite."
 
 #: admin/views/goto-pro.php:86
 msgid ""
-"Allow to display cookie cettings popup where site visitors can opt-in or "
+"Allow to display cookie settings popup where site visitors can opt-in or "
 "give consent to cookie categories."
 msgstr ""
-"Anzeigen eines Cookie-Einstellungen-Popups, wo der Website-Besucher seine "
-"Einwillung für bestimmte Cookie-Kategorien erteilen kann."
 
 #: admin/views/goto-pro.php:87
 msgid ""
@@ -793,7 +796,7 @@ msgid "Cookie List"
 msgstr "Cookie-Liste"
 
 #: public/class-cookie-law-info-public.php:161
-#: public/modules/shortcode/shortcode.php:114
+#: public/modules/shortcode/shortcode.php:133
 msgid "Cookie"
 msgstr "Cookie"
 
@@ -829,21 +832,43 @@ msgstr "Es wurden keine Einträge gefunden"
 msgid "Nothing found in Trash"
 msgstr "Es wurden keine Einträge im Papierkorb gefunden"
 
-#: public/modules/shortcode/shortcode.php:66
+#: public/modules/shortcode/shortcode.php:85
 msgid "Delete Cookies"
 msgstr "Cookies löschen"
 
-#: public/modules/shortcode/shortcode.php:115
+#: public/modules/shortcode/shortcode.php:134
 msgid "Type"
 msgstr "Typ"
 
-#: public/modules/shortcode/shortcode.php:116
+#: public/modules/shortcode/shortcode.php:135
 msgid "Duration"
 msgstr "Dauer"
 
-#: public/modules/shortcode/shortcode.php:117
+#: public/modules/shortcode/shortcode.php:136
 msgid "Description"
 msgstr "Beschreibung"
+
+#~ msgid "General"
+#~ msgstr "Allgemeines"
+
+#~ msgid "Customise Cookie Bar"
+#~ msgstr "Cookie-Leiste anpassen"
+
+#~ msgid "Customise Buttons"
+#~ msgstr "Anpassen der Schaltflächen"
+
+#~ msgid "Advanced"
+#~ msgstr "Erweitert"
+
+#~ msgid "Help Guide"
+#~ msgstr "Leitfaden"
+
+#~ msgid ""
+#~ "Allow to display cookie cettings popup where site visitors can opt-in or "
+#~ "give consent to cookie categories."
+#~ msgstr ""
+#~ "Anzeigen eines Cookie-Einstellungen-Popups, wo der Website-Besucher seine "
+#~ "Einwillung für bestimmte Cookie-Kategorien erteilen kann."
 
 #~ msgid "Privacy Overview"
 #~ msgstr "Datenschutzübersicht"

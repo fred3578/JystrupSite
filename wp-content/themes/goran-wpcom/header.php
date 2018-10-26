@@ -53,7 +53,7 @@
 		<?php endif; ?>
 	</header><!-- #masthead -->
 	<?php 
-echo do_shortcode('[smartslider3 slider=2]');
+echo do_shortcode('[smartslider3 slider=3]');
 ?>
 
 	<div id="content" class="site-content">
