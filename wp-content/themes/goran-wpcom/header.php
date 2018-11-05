@@ -53,15 +53,11 @@
 		<?php endif; ?>
 	</header><!-- #masthead -->
 	<?php 
-echo do_shortcode('[smartslider3 slider=2]'); 
-echo do_shortcode('[smartslider3 slider=1]');
-echo do_shortcode('[smartslider3 slider=3]'); 
-echo do_shortcode('[smartslider3 slider=1]');
 echo do_shortcode('[smartslider3 slider=1]'); 
-echo do_shortcode('[smartslider3 slider=1]');
-echo do_shortcode('[smartslider3 slider=1]'); 
-echo do_shortcode('[smartslider3 slider=1]');
+echo do_shortcode('[smartslider3 slider=2]');
 echo do_shortcode('[smartslider3 slider=3]');
+echo do_shortcode('[smartslider3 slider=4]');
+echo do_shortcode('[smartslider3 slider=5]');
 ?>
 
 	<div id="content" class="site-content">
