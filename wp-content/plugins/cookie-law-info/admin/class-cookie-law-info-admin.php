@@ -154,20 +154,26 @@ class Cookie_Law_Info_Admin {
 			array($this,'admin_non_necessary_cookie_page')
 		);
 		//rearrange settings menu
-		$out=array();
-		$back_up_settings_menu=array();
-		foreach ($submenu['edit.php?post_type='.CLI_POST_TYPE] as $key => $value) 
+		if(isset($submenu) && !empty($submenu) && is_array($submenu))
 		{
-			if($value[2]=='cookie-law-info')
+			$out=array();
+			$back_up_settings_menu=array();
+			if(isset($submenu['edit.php?post_type='.CLI_POST_TYPE]) && is_array($submenu['edit.php?post_type='.CLI_POST_TYPE]))
 			{
-				$back_up_settings_menu=$value;
-			}else
-			{
-				$out[$key]=$value;
+				foreach ($submenu['edit.php?post_type='.CLI_POST_TYPE] as $key => $value) 
+				{
+					if($value[2]=='cookie-law-info')
+					{
+						$back_up_settings_menu=$value;
+					}else
+					{
+						$out[$key]=$value;
+					}
+				}
+				array_unshift($out,$back_up_settings_menu);
+				$submenu['edit.php?post_type='.CLI_POST_TYPE]=$out;
 			}
 		}
-		array_unshift($out,$back_up_settings_menu);
-		$submenu['edit.php?post_type='.CLI_POST_TYPE]=$out;
 	}
 
 	public function plugin_action_links( $links ) 
@@ -428,7 +434,10 @@ class Cookie_Law_Info_Admin {
 	function remove_cli_addnew_link() 
 	{
 	    global $submenu;
-	    unset($submenu['edit.php?post_type='.CLI_POST_TYPE][10]);
+	    if(isset($submenu) && !empty($submenu) && is_array($submenu))
+		{
+	    	unset($submenu['edit.php?post_type='.CLI_POST_TYPE][10]);
+		}
 	}
 	
 

@@ -1,10 +1,10 @@
 === GDPR Cookie Consent ===
-Contributors: webtoffee, markwt
+Contributors: webtoffee,markwt
 Donate link: https://www.webtoffee.com/plugins/ 
 Tags: eu cookie law, GDPR, cookie law, cookie consent, eu privacy directive, privacy directive, cookies, privacy, compliance
 Requires at least: 3.3.1
 Tested up to: 4.9.8
-Stable tag: 1.6.9
+Stable tag: 1.7.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,27 +53,26 @@ Features:
 <blockquote>
 
 = GDPR Cookie Consent Premium Version Features =
-<ul>
-<li>Manage list of cookies ( Name, CookieID, Description, Duration, Type, Category, Header Script, Footer Script).</li>
-	<li>Manage Cookie Categories.</li>
-	<li>Scan and auto block scripts - Google Analytics, FB Pixel, Google tag manager.</li>
-	<li>Location based exclusion of cookie notice for EU countries.</li>
-	<li>Provide the users with the granular control over the cookies/scipts used by the website.</li>
-	<li>Optionally log users' consent and export into a CSV file.</li>
-	<li>Customize the privacy overview in the cookie settings popup.</li>
-	<li>Export/import cookies and related information via CSV file.</li>
-	<li>Scan and import/export the cookies in the homepage.</li>
-	<li>Allow to display cookie cettings popup where site visitors can opt-in or give consent to cookie categories.</li>
-	<li>Customisable to look just like your own website’s style: customise the colours, styles and fonts.</li>
-	<li>Put the cookie bar in either the header or the footer.</li>
-	<li>(Optional) accept cookie policy if the user scrolls.</li>
-	<li>(Optional) automatically close the cookie bar after a delay (delay is configurable).</li>
-	<li>(Optional) cookie bar can be permanently dismissed or accessible through a “show again” tab.</li>
-	<li>(Optional) “show again” tab is fully customisable including position shown on page and styles.</li>
-	<li>“Cookie Audit” shortcode to construct a nicely-styled ‘Privacy & Cookie Policy’.</li>
-	<li>WPML compatible</li>
-	<li>qTranslate support</li>
-</ul>
+&#9989; Manage list of cookies ( Name, CookieID, Description, Duration, Type, Category, Header Script, Footer Script).  
+&#9989;Manage Cookie Categories.  
+&#9989;Scan and auto block scripts - Google Analytics, FB Pixel, Google tag manager.  
+&#9989;Location based exclusion of cookie notice for EU countries.  
+&#9989;Provide the users with the granular control over the cookies/scipts used by the website.  
+&#9989;Optionally log users' consent and export into a CSV file.  
+&#9989;Customize the privacy overview in the cookie settings popup.  
+&#9989;Export/import cookies and related information via CSV file.  
+&#9989;Scan and import/export the cookies  
+&#9989;Allow to display cookie cettings popup where site visitors can opt-in or give consent to cookie categories.  
+&#9989;Customisable to look just like your own website’s style: customise the colours, styles and fonts.  
+&#9989;Put the cookie bar in either the header or the footer.  
+&#9989;Cookie bar preview in admin settings  
+&#9989;(Optional) accept cookie policy if the user scrolls.  
+&#9989;(Optional) automatically close the cookie bar after a delay (delay is configurable).  
+&#9989;(Optional) cookie bar can be permanently dismissed or accessible through a “show again” tab.  
+&#9989;(Optional) “show again” tab is fully customisable including position shown on page and styles.  
+&#9989;“Cookie Audit” shortcode to construct a nicely-styled ‘Privacy & Cookie Policy’.  
+&#9989;WPML compatible  
+&#9989;qTranslate support  
 
 For complete list of features and details, Please visit <a rel="nofollow" href="https://www.webtoffee.com/product/gdpr-cookie-consent/">GDPR Cookie Consent Premium Plugin</a> for more details
 
@@ -173,6 +172,14 @@ See http://cookielawinfo.com for more information on what is required.
 
 == Changelog ==
 
+= 1.7.0 =
+
+* Bug: Submenu sorting issue for custom user roles
+
+= 1.6.10 =
+
+* Bug: submenu sorting issue for non administrator accounts
+* Bug: Flashing the cookie bar on page load.
 
 = 1.6.9 =
 
@@ -331,7 +338,6 @@ See http://cookielawinfo.com for more information on what is required.
 
 == Upgrade Notice ==
 
-= 1.6.9 =
-* New enclosing shortcode added for better control of third party content. [cookie_after_accept]..content goes here..[/cookie_after_accept]
-* Basic support included for Litespeed cache, WP Super Cache, Site ground cache, Endurance Cache, WP Fastest Cache
-* Option to choose from the built-in pages for 'Read More' link.
+= 1.7.0 =
+
+* Bug: submenu sorting issue for custom user roles
