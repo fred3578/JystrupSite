@@ -1,0 +1,192 @@
+.site-header {
+    background: #f2efef;
+    color: #5cc102;
+}
+
+.main-navigation ul ul a {
+		background: #f2efef;
+	}
+
+.main-navigation ul ul a:hover {
+		background: #5cc102;
+		color: #fff;
+	}
+
+.menu-primary .sub-menu {
+		padding-top: 0;
+		margin-top: 0;
+		border: 1px solid transparent;
+		border-bottom: 0;
+	}
+
+.hero {
+    padding: 24px;
+    background-color: #5cc102;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    padding: 13px 26px;
+    background: #5cc102;
+    border: 0;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+@media screen and (max-width: 1019px) {
+.menu-toggle {
+	display: block;
+	width: 100%;
+	background: #5cc102;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+}
+
+	@media screen and (max-width: 765px) {
+.menu-toggle:hover,
+.menu-toggle:focus,
+.meu-toggle:active,
+.main-navigation.toggle-on .menu-toggle {
+	background: #5cc102;
+}
+}
+
+.entry-title a {
+    color: black;
+}
+
+.entry-title a:hover, .entry-title a:focus, .entry-title a:active {
+    color: #5cc102;
+}
+
+a {
+	color: #5cc102;
+}
+
+.main-navigation {
+	color: black;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+	.main-navigation ul ul .page_item_has_children > a .dropdown-toggle,
+	.main-navigation ul ul .menu-item-has-children > a .dropdown-toggle,
+	.hero-image .main-navigation ul ul .page_item_has_children > a .dropdown-toggle,
+	.hero-image .main-navigation ul ul .menu-item-has-children > a .dropdown-toggle,
+	.main-navigation ul ul .page_item_has_children > a .dropdown-toggle:focus,
+	.main-navigation ul ul .menu-item-has-children > a .dropdown-toggle:focus,
+	.hero-image .main-navigation ul ul .page_item_has_children > a .dropdown-toggle:focus,
+	.hero-image .main-navigation ul ul .menu-item-has-children > a .dropdown-toggle:focus {
+		right: 8px;
+		background: #5cc102;
+		border-color: pink;
+	}
+	.main-navigation ul ul .page_item_has_children > a .dropdown-toggle:hover,
+	.main-navigation ul ul .menu-item-has-children > a .dropdown-toggle:hover,
+	.hero-image .main-navigation ul ul .page_item_has_children > a .dropdown-toggle:hover,
+	.hero-image .main-navigation ul ul .menu-item-has-children > a .dropdown-toggle:hover {
+		background: black;
+	}
+
+@media screen{
+.main-navigation .menu-item .dropdown-toggle, .main-navigation .menu-item .dropdown-toggle {
+    background: #5cc102;
+    border-color: black;
+	}}
+
+
+
+@media screen {
+.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active, .main-navigation .current_page_item > a, .main-navigation .current-menu-item > a {
+    border-bottom-color: #5cc102;
+	}}
+
+@media screen {
+.main-navigation .menu-item .dropdown-toggle:hover, .hero-image .main-navigation .menu-item .dropdown-toggle:hover {
+    background: black;
+	}}
+
+@media screen {
+.main-navigation .menu-item .dropdown-toggle, .main-navigation .menu-item .dropdown-toggle:focus {
+    background: #5cc102;
+    border-color: #a13736;
+	}}
+
+@media screen and (min-width: 1920px) {
+	/* Layout */
+	.site {
+		width: 1920px;
+	}
+	.hero .hentry,
+	.hero-wrapper,
+	.no-sidebar-full .content-area {
+		width: 1400px;
+	}
+	.footer-navigation,
+	.footer-navigation + .site-info {
+		width: 507px;
+	}
+	.content-area,
+	.main-navigation {
+		width: 1720px;
+	}
+	.site-branding {
+		width: 192px;
+	}
+	.featured-page,
+	.footer-widget,
+	.front-page-widget,
+	.grid,
+	.widget-area {
+		width: 280px;
+	}
+	.front-page-testimonials-wrapper .hentry.jetpack-testimonial {
+		width: 507px;
+	}
+	.site-logo {
+		max-height: 192px;
+	}
+
+	/* Content */
+	.archive:not(.no-sidebar):not(.post-type-archive-jetpack-testimonial) .post-thumbnail,
+	.blog:not(.no-sidebar) .post-thumbnail,
+	.search:not(.no-sidebar) .post-thumbnail,
+	.single:not(.no-sidebar):not(.post-type-archive-jetpack-testimonial) .post-thumbnail,
+	.sidebar-left.archive:not(.no-sidebar):not(.post-type-archive-jetpack-testimonial) .post-thumbnail,
+	.sidebar-left.blog:not(.no-sidebar) .post-thumbnail,
+	.sidebar-left.search:not(.no-sidebar) .post-thumbnail,
+	.sidebar-left.single:not(.no-sidebar):not(.post-type-archive-jetpack-testimonial) .post-thumbnail {
+		width: 772px;
+	}
+	body.hero-image .hero.with-featured-image,
+	body[class*="front-page"] .hero {
+		padding: 216px 0;
+	}
+	body.hero-image .hero.without-featured-image {
+		padding: 144px 0;
+	}
+	body.hero-image .hero.with-featured-image {
+		padding-top: 312px;
+	}
+	body.hero-image .hero.without-featured-image {
+		padding-top: 240px;
+	}
+	.content-area,
+	.site-branding,
+	.site-info {
+		float: left;
+		margin-left: 8px;
+	}
+	.main-navigation {
+		margin-top: 24px;
+		margin-right: 0px;
+		margin-bottom: 24px;
+	}
+	#primary{
+		width: 1400px;
+	}
+}
